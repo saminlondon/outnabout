@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   end
   resources :venues
 
+
   resources :bookings, only: :index
+  
+  get "my_venues", to: 'venues#my_venues'
+
+
 
   # Defines the root path route ("/")
   # root "articles#index"
