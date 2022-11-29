@@ -1,0 +1,14 @@
+<h1>My Bookings</h1>
+
+
+
+<% @slots.each do |b| %>
+<%= slots.start_time %> to <%= slots.end_time %>
+<% end %>
+
+<% @bookings.each do |b| %>
+The bookings is for <%= b.user_party_size %> people
+
+<%= link_to "Edit Booking", edit_booking_path(b) %>
+<%= link_to "Cancel", b, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% end %>
