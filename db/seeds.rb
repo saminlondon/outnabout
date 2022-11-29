@@ -10,7 +10,7 @@ maaz = User.create(first_name: "Maaz", last_name: "Sattar", email: "maaz@test.co
 kamal = User.create(first_name: "Kamal", last_name: "Minott", email: "kamal@test.com", password:"123456", is_host?: true, address: "W22AK")
 yeon = User.create(first_name: "Yeon", last_name: "Kim", email: "yeon@test.com", password:"123456", is_host?: false, address: "W22AY")
 
-users = [maaz, kamal, yeon]
+users = [maaz.id, kamal.id, yeon.id]
 # queens =Venue.create(name: "Queensway Skate Bowl Dine", address: "17 Queensway, London", description: "Join us for an evening of bowling, skating or dining", user_id: maaz)
 # flight = Venue.create(name: "Flight Club", address: "111 Victoria, London", description: "Join us for an evening of darts", user_id: kamal)
 # karts = Venue.create(name: "Capital Karts", address: "125 Canary Wharf, London", description: "Join us for an evening of Go Karting", user_id: kamal)

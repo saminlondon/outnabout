@@ -1,7 +1,10 @@
 class VenuesController < ApplicationController
   def index
-    @venues = Venue.where(:id == current_user.id)
+    # @venues = Venue.all
+    @venues = Venue.where(user: current_user)
+    # @venues.map { |venue| venue if venue.user_id == current_user.id }
   end
+
   def new
     @venue = Venue.new
     # @venue = Venue.where(current_user.id == :user_id)
