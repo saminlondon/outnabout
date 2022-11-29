@@ -30,9 +30,16 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item dropdown">
-            <%= link_to "Login", new_user_session_path, class: "nav-link dropdown-toggle" %>
-          </li>
+          <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Login/sign-up
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="Sign-up" href="http://localhost:3000/users/sign_up">Sign up</a></li>
+    <li><a class="Login" href="http://localhost:3000/users/sign_in">Login</a></li>
+    <li><%= link_to "Home", root_path %></li>
+  </ul>
+</div>
         <% end %>
       </ul>
     </div>
