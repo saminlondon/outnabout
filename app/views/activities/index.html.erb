@@ -1,1 +1,13 @@
+
 <h1>hello</h1>
+
+<div class="container">
+  <h1>Activities Near You</h1>
+  <ul>
+  <% @activities.each do |a| %>
+  <li><%= link_to a.name.capitalize, activity_path(a.id), style: "text-decoration:none;"%> - <strong><%= a.venue.name %></strong></li>
+    <p><%= a.venue.address %></p>
+    <p>$<%= a.price %>/person</p>
+  <% end %>
+  </ul>
+</div>
