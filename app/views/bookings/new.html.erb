@@ -1,0 +1,6 @@
+<% simple_form_for @booking do |f| %>
+<%= f.input :slot, as => :hidden, :input_html => { :value => @slot.id }%>
+<% f.input :activity, as => :hidden, :input_html => { :value => @activity.current_user.slots.pluck(:activity_id).uniq} %>
+<%= f.input :user_party_size, as: :integer %>
+<%= f.button :submit, 'Book' %>
+<% end %>
