@@ -1,0 +1,8 @@
+<h1><strong>New Venue</strong></h1>
+
+<% simple_form_for @venue do |f| %>
+<%= f.input :name %>
+<%= f.input :address %>
+<%= f.input :description %>
+<%= f.button :submit, 'Create Venue' %>
+<% end %>
