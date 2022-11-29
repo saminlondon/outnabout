@@ -1,0 +1,7 @@
+<h1>New Slot</h1>
+<%= simple_form_for @slot do |f| %>
+<%= f.input :activity, :as => :hidden, :input_html => { :value => @activity_id } %>
+<%= f.input :start_time, as: :integer %>
+<%= f.input :end_time as: :integer %>
+<%= f.button :submit, "Create Slot" %>
+<% end %>
