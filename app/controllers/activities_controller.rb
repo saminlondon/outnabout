@@ -12,8 +12,6 @@ class ActivitiesController < ApplicationController
     # @venue = Venue.where(current_user.id == :user_id)
   end
 
-
-
   def show
   end
 
