@@ -1,0 +1,12 @@
+<h1><%= @activity.name.capitalize %> - <%= @activity.venue.name %></h1>
+<h3><%= @activity.venue.address %> (<%= @activity.operational_start_time.strftime("%I:%M%p")%> - <%= @activity.operational_end_time.strftime("%I:%M%p") %>)</h3>
+<h3> $<%= @activity.price %>/person</h3>
+<br>
+
+<h5>Description</h5>
+<p><%= @activity.description %></p>
+<br>
+<h5>About <%= @activity.venue.name %></h5>
+<p><%= @activity.venue.description %></p>
+<%= link_to "Back", activities_path, class: "btn btn-dark" %>
+<a href="#" class="btn btn-primary">Book</a>
