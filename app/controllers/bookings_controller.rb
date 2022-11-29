@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    Activity.where(id: current_user.slots.pluck(:activity_id).uniq)
     @activity = Activity.find(params[:activity_id])
     @booking.activity = Booking.new(booking_params)
   end
@@ -27,6 +28,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
+    redirecrt_to bookings_path
   end
 
   private
