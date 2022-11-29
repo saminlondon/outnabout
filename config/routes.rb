@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "activities#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :activities
+  resources :activities do
+    resources :bookings, except: :index
+  end
   resources :venues
-  resources :bookings
+
+  resources :bookings, only: :index
 
   # Defines the root path route ("/")
   # root "articles#index"
