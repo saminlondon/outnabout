@@ -2,5 +2,6 @@
 <ul>
 <% @venues.each do |v| %>
 <li><h5><%= v.name %> - <%= v.address %></h5></li>
+<p><%= v.description %></p>
 <% end %>
 </ul>
