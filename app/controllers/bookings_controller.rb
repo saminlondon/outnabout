@@ -9,7 +9,8 @@ class BookingsController < ApplicationController
     if current_user.nil?
       redirect_to new_user_session_path
     else
-      @activity = Activity.where(id: current_user.slots.pluck(:activity_id).uniq)
+      @activity = Activity.find(params[:activity_id])
+      @slots = @activity.slots
       @booking = Booking.new
     end
   end
@@ -22,36 +23,39 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @bookings = Booking.where(user_id: current_user.id)
+      # @activity = Activity.where(id: current_user.slots.pluck(:activity_id).uniq)
     end
   end
 
   def create
-    @activity = Activity.where(id: current_user.slots.pluck(:activity_id).uniq)
-    @booking.activity = Booking.new(booking_params)
+    @activity = Activity.find(params[:activity_id])
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path
+      redirect_to activity_bookings_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
+    @activity = Activity.find(params[:activity_id])
   end
 
   def update
     @booking.update(booking_params)
+    redirect_to activity_bookings_path
   end
 
   def destroy
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to activity_bookings_path
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:user_party_size)
+    params.require(:booking).permit(:user_party_size, :slot_id)
   end
 
   def set_booking
