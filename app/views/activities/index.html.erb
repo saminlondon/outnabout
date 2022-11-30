@@ -1,10 +1,14 @@
+
 <div class="container">
   <h1>Activities Near You</h1>
   <ul>
+
   <% @activities.each do |a| %>
-  <li><%= link_to a.name.capitalize, activity_path(a.id), style: "text-decoration:none;"%> - <strong><%= a.venue.name %></strong></li>
-    <p><%= a.venue.address %></p>
-    <p>$<%= a.price %>/person</p>
+    <div class="card mb-3">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <p><%= link_to a.name, activity_path(a) %></p>
+        <p><%= a.venue.name %> <br><%= a.venue.address %></p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
   <% end %>
-  </ul>
-</div>
