@@ -7,8 +7,8 @@
     <div class="card mb-3">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
-
-        <p><%= a.venue.address %></p>
+        <p><%= link_to a.name, activity_path(a) %></p>
+        <p><%= a.venue.name %> <br><%= a.venue.address %></p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
   <% end %>
