@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   def index
     @venues = Venue.all
@@ -36,6 +36,8 @@ class VenuesController < ApplicationController
   end
 
   def destroy
+    @activity = Activity.where(venue: @venue)
+    @activity.each { |a| a.destroy }
     @venue.destroy!
     redirect_to activities_path
   end
