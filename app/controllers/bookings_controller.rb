@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @bookings = Booking.where(user_id: current_user.id)
-      # @activity = Activity.where(id: current_user.slots.pluck(:activity_id).uniq)
+      @activity = Activity.where(id: current_user.slots.pluck(:activity_id).uniq)
     end
   end
 

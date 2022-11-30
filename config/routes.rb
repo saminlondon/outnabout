@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :activities do
-    resources :bookings, except: :index
+    resources :bookings
   end
   resources :venues
 
-  resources :bookings, only: :index
+  # resources :bookings, only: :index
 
   get "my_venues", to: 'venues#my_venues'
 
@@ -15,3 +15,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 end
+
+# resources :activities do
+#   resources :bookings, except: :index
+# end
