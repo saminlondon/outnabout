@@ -39,10 +39,12 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @activity = Activity.find(params[:activity_id])
   end
 
   def update
     @booking.update(booking_params)
+    redirect_to activity_bookings_path
   end
 
   def destroy
