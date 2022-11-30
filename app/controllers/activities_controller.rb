@@ -8,8 +8,13 @@ class ActivitiesController < ApplicationController
 
   def new
     @venue = Venue.find(params[:venue_id])
-    @activity = Activity.new
-    # @venue = Venue.where(current_user.id == :user_id)
+    if current_user.nil?
+      redirect_to new_user_session_path
+      flash[:notice] = "Please Log In"
+    else
+
+      @activity = Activity.new
+    end
   end
 
   def show
@@ -17,7 +22,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
-    @activity.venue = Venue.where(:venue_id == current_user.id)
+    @activity.venue = Venue.find(params[:activity][:venue])
     if @activity.save
       redirect_to activity_path(@activity)
     else
