@@ -3,7 +3,13 @@ class ActivitiesController < ApplicationController
 
 
   def index
-    @activities = Activity.all
+    if params[:search].present? && !params[:search][:query].empty?
+      @activities = PgSearch.multisearch(params[:search][:query])
+    elsif params[:search]
+      @activities = Activity.all
+    else
+      @activities = Activity.all
+    end
   end
 
   def new
