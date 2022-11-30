@@ -25,6 +25,21 @@
         <li class="nav-item">
             <%= link_to "Venues", venues_path, class: "nav-link" %>
           </li>
+          <li class="nav-item">
+            <% if current_user.is_host?%>
+                  <%= link_to "My Venues", venues_path, class: "nav-link" %>
+            <% end %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "My venues", my_venues_path, class: "dropdown-item" %>
+              <%= link_to "Bookings", activity_bookings_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <div class="dropdown">
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
