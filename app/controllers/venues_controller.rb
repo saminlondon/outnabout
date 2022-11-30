@@ -2,7 +2,8 @@ class VenuesController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    @venues = Venue.where(user: current_user)
+    @venues = Venue.all
+
   end
 
   def new
@@ -11,7 +12,7 @@ class VenuesController < ApplicationController
   end
 
   def my_venues
-    @venues = Venue.where(user_id: current_user.id)
+    @venues = Venue.where(user: current_user)
   end
 
   def show
