@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+.hero {
+  background-color: #ffc116;
+  padding: 150px 0;
+  height: 400px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: 'DM Serif Display', serif;
+  font-size: 400px;
+  color: black;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: black;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
