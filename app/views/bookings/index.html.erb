@@ -1,2 +1,13 @@
 <h1> hello </h1>
-<%# <%= link_to  activity_bookings_path %> %>
+
+<h1>My Bookings</h1>
+
+<% @slots.each do |b| %>
+<%= b.start_time %> to <%= b.end_time %>
+<% end %>
+
+<%=@bookings.each do |b| %>
+<p>The bookings is for <%= b.user_party_size %> people</p>
+<%= link_to "Edit Booking", bookings_path %>
+<%= link_to "Cancel", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% end %>
