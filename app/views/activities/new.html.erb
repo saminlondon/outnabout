@@ -3,6 +3,7 @@
   <div class="container">
     <div>
       <%= simple_form_for (@activity), html: { class: "form-new-activity" } do |f| %>
+        <%= f.input :venue, :as => :hidden, :input_html => { :value => @venue.id } %>
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :operational_start_time %>
@@ -11,7 +12,6 @@
         <%= f.input :price %>
         <%= f.input :activity_party_size %>
         <%= f.input :category %>
-        <%= f.input :venue, collection: @venues%>
         <%= f.button :submit, 'Create', class:"btn btn-primary"  %>
       <% end %>
     </div>
