@@ -1,14 +1,37 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
-
   def index
-    if params[:search].present? && !params[:search][:query].empty?
-      @activities = PgSearch.multisearch(params[:search][:query])
-    elsif params[:search]
-      @activities = Activity.all
-    else
-      @activities = Activity.all
+    # if params[:query].present? && !params[:query].empty?
+    #   @activities = PgSearch.multisearch(params[:query])
+    # elsif params[:query]
+    #   @activities = Activity.all
+    # else
+    #   @activities = Activity.all
+    # end
+
+    # @activities_pg = PgSearch.multisearch(params[:query]).where(searchable_type: "Activity")
+    # @activites = @activities_pg.map do |activity_pg|
+    #   Activity.find(activity_pg.searchable_id)
+    # end
+
+    # @venues_pg = PgSearch.multisearch(params[:query]).where(searchable_type: "Venue")
+    # @venues = @venues_pg.map! do |venue_pg|
+    #   Venue.find(venue_pg.searchable_id)
+    # end
+    # case
+    # when @activites.present?
+
+    if params[:query].present?
+      @activities = Activity.where("name ILIKE ?", "%#{params[:query]}%")
+      if @activities.empty?
+        @venues = Venue.where("name ILIKE ?", "%#{params[:query]}%")
+      else
+        @venues = []
+        @activities.each do |activity|
+          @venues << activity.venue
+        end
+      end
     end
   end
 

@@ -1,5 +1,22 @@
 // Specific CSS for your home-page
+
+.container{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+
 .card-price-box{
   display:flex;
   justify-content: space-between;
+}
+
+.card {
+  display: inline-block;
+  flex: 0 0 auto;
+  height: 100%
 }
