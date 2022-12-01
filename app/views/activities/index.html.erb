@@ -1,10 +1,25 @@
+
 <div class="container">
+<% if params[:query].present? %>
+<ul>
+  <% @venues.each do |venue| %>
+    <li><%= venue.name %></li>
+    <% venue.activities.each do |activity| %>
+    <%= activity.name %>
+    <% end %>
+  <% end %>
+</ul>
+<% end %>
   <h1>Activities Near You</h1>
   <ul>
+
   <% @activities.each do |a| %>
-  <li><%= link_to a.name.capitalize, activity_path(a.id), style: "text-decoration:none;"%> - <strong><%= a.venue.name %></strong></li>
-    <p><%= a.venue.address %></p>
-    <p>$<%= a.price %>/person</p>
+    <div class="card mb-3">
+     <%= image_tag("https://www.qmsu.org/asset/Organisation/8415/QMSU-1.jpeg", height: "40px", width: "200px") %>
+        <p><%= link_to a.name, activity_path(a) %></p>
+        <p><%= a.venue.name %> <br><%= a.venue.address %></p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
   <% end %>
-  </ul>
+
 </div>

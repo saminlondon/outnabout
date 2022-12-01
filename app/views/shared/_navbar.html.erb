@@ -1,29 +1,29 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to activities_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <% if user_signed_in? %>
+    <div class="container-fluid">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", height: '40px', width: '40px', class: 'rounded' %>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <%= link_to "My venues", my_venues_path, class: "dropdown-item" %>
+        <%= link_to "Bookings", root_path, class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+      </ul>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Activities", activities_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Venues", venues_path, class: "nav-link" %></li>
           <li class="nav-item">
-            <%= link_to "Activities", activities_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Venues", venues_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <% if current_user.is_host?%>
-                  <%= link_to "My Venues", venues_path, class: "nav-link" %>
-            <% end %>
+              <% if current_user.is_host?%>
+                    <%= link_to "My Venues", venues_path, class: "nav-link" %>
+              <% end %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -33,20 +33,29 @@
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
-        <% else %>
-          <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Login/sign-up
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="Sign-up" href="http://localhost:3000/users/sign_up">Sign up</a></li>
-    <li><a class="Login" href="http://localhost:3000/users/sign_in">Login</a></li>
-    <li><%= link_to "Home", root_path %></li>
-    <li></li>
-  </ul>
-</div>
-        <% end %>
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
-</div>
+  <% else %>
+    <div class="container-fluid" style="flex-direction: row-reverse;">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Login/sign-up
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="Sign-up" href="http://localhost:3000/users/sign_up">Sign up</a></li>
+          <li><a class="Login" href="http://localhost:3000/users/sign_in">Login</a></li>
+          <li><%= link_to "Home", root_path %></li>
+        </ul>
+      </div>
+    </div>
+    <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an venue or activity"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+</nav>
