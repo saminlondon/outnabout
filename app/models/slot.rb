@@ -4,6 +4,7 @@ class Slot < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
 
+
   def slot_time
     "#{self.start_time.strftime("%R")} - #{self.end_time.strftime("%R")}"
   end

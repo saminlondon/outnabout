@@ -1,5 +1,8 @@
 class Activity < ApplicationRecord
-  CATEGORY = %w(bowling ping-pong darts go-karting rock-climbing trampolining mini-golf vr-gaming ice-skating escape-room)
+  include PgSearch::Model
+  multisearchable against: [:name, :category]
+  # CATEGORY = %w(bowling ping-pong darts go-karting rock-climbing trampolining mini-golf vr-gaming ice-skating escape-room)
+
   has_many :slots
 
   belongs_to :venue
@@ -10,4 +13,6 @@ class Activity < ApplicationRecord
   validates :activity_party_size, presence: true
   validates :price, presence: true
   validates :operational_end_time, presence: true
+
+
 end

@@ -1,7 +1,16 @@
-<h1>Venues</h1>
-<ul>
-<% @venues.each do |v| %>
-<li><h5><%= v.name %> - <%= v.address %></h5></li>
-<p><%= v.description %></p>
-<% end %>
-</ul>
+<div class="container">
+  <h1>Venues</h1>
+  <hr>
+
+  <% @venues.each do |v| %>
+  <div class="index-card" onclick="this.querySelector('a').click(); return true;">
+    <h5><%= link_to v.name, venue_path(v.id)%> - <%= v.address %></h5></li>
+    <p><%= v.description %></p>
+  </div>
+  <% end %>
+
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
