@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @activity = Activity.find(params[:activity_id])
-      @slots = @activity.slots
       @booking = Booking.new
     end
   end
@@ -33,7 +32,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path
+
+      redirect_to activity_booking_path(@activity.id, @booking.id)
+
     else
       render :new, status: :unprocessable_entity
     end
