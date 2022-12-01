@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :bookings
   end
   resources :venues
-
+  get 'all_activities', to: 'activities#all_activities'
   # resources :bookings, only: :index
 
   get "my_venues", to: 'venues#my_venues'

@@ -35,6 +35,10 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def all_activities
+    @activities = Activity.all
+  end
+
   def new
     @venue = Venue.find(params[:venue_id])
     if current_user.nil?
