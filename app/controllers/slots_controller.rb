@@ -4,6 +4,7 @@ class SlotsController < ApplicationController
   end
 
   def new
+    @available = Slot.where(is_available: nil)
     @slot = Slot.new
   end
 
