@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Activities", activities_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Activities", all_activities_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to "Venues", venues_path, class: "nav-link" %></li>
           <li class="nav-item">
               <% if current_user.is_host?%>
@@ -37,25 +37,25 @@
       </div>
     </div>
   <% else %>
-    <div class="container-fluid" style="flex-direction: row-reverse;">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Login/sign-up
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="Sign-up" href="http://localhost:3000/users/sign_up">Sign up</a></li>
-          <li><a class="Login" href="http://localhost:3000/users/sign_in">Login</a></li>
-          <li><%= link_to "Home", root_path %></li>
-        </ul>
+      <div class="container-fluid" style="flex-direction: row-reverse;">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Login/sign-up
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="Sign-up" href="http://localhost:3000/users/sign_up">Sign up</a></li>
+            <li><a class="Login" href="http://localhost:3000/users/sign_in">Login</a></li>
+            <li><%= link_to "Home", root_path %></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find an venue or activity"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find an venue or activity"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   <% end %>
 </nav>

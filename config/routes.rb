@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :bookings, except: :index
   end
   resources :venues
+  get 'all_activities', to: 'activities#all_activities'
+
 
   resources :bookings, only: :index
 
