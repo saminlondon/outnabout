@@ -4,6 +4,15 @@ class VenuesController < ApplicationController
   def index
     @venues = Venue.all
 
+    @markers = @venues.geocoded.map do |v|
+      {
+        lat: v.latitude,
+        lng: v.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { v: v }),
+        image_url: helpers.asset_url("pin.png")
+
+      }
+    end
   end
 
   def new
