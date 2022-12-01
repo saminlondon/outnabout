@@ -35,13 +35,16 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def all_activities
+    @activities = Activity.all
+  end
+
   def new
     @venue = Venue.find(params[:venue_id])
     if current_user.nil?
       redirect_to new_user_session_path
       flash[:notice] = "Please Log In"
     else
-
       @activity = Activity.new
     end
   end
@@ -69,8 +72,7 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy!
-    redirect_to activities_path
-
+    redirect_to all_activities_path
   end
 
   private

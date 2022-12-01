@@ -1,4 +1,8 @@
-<h1>hello</h1>
+
+<h1>Thanks for booking!</h1>
+
+<p>The booking is for <%= @booking.user_party_size %> people </p>
+<p>The booking is from <%= @booking.slot.start_time %> to <%= @booking.slot.end_time %>  </p>
 
 
-<%= @booking.user_party_size %>
+<%= link_to "Cancel", activity_booking_path(@booking),  class: "btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

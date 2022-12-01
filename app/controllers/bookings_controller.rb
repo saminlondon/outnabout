@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @slots = Slot.all
   end
 
   def new
@@ -10,7 +11,6 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @activity = Activity.find(params[:activity_id])
-      @slots = @activity.slots
       @booking = Booking.new
     end
   end
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @bookings = Booking.where(user_id: current_user.id)
-      # @activity = Activity.where(id: current_user.slots.pluck(:activity_id).uniq)
+      @activity = Activity.where(id: current_user.slots.pluck(:activity_id).uniq)
     end
   end
 
@@ -32,7 +32,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
-      redirect_to activity_bookings_path
+
+      redirect_to activity_booking_path(@activity.id, @booking.id)
+
     else
       render :new, status: :unprocessable_entity
     end
@@ -43,13 +45,14 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
-    redirect_to activity_bookings_path
+    # @activity = Activity.find(params[:activity_id])
+    @booking.update!(booking_params)
+    redirect_to activity_booking_path(@booking)
   end
 
   def destroy
     @booking.destroy
-    redirect_to activity_bookings_path
+    redirect_to bookings_path, see_status: :other
   end
 
   private
@@ -61,4 +64,5 @@ class BookingsController < ApplicationController
   def set_booking
     @booking = Booking.find(params[:id])
   end
+
 end

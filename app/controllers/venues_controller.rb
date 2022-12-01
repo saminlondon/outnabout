@@ -4,6 +4,15 @@ class VenuesController < ApplicationController
   def index
     @venues = Venue.all
 
+    @markers = @venues.geocoded.map do |v|
+      {
+        lat: v.latitude,
+        lng: v.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { v: v }),
+        image_url: helpers.asset_url("pin.png")
+
+      }
+    end
   end
 
   def new
@@ -40,7 +49,7 @@ class VenuesController < ApplicationController
     @activity = Activity.where(venue: @venue)
     @activity.each { |a| a.destroy }
     @venue.destroy!
-    redirect_to activities_path
+    redirect_to my_venues_path
   end
 
   private

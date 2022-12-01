@@ -6,9 +6,11 @@
       <h5><%= @venue.address %></h5>
     </div>
     <div>
-      <%= link_to "Delete", @venue, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <%= link_to "Edit", edit_venue_path(@venue.id), class:"btn btn-warning" %>
-      <%= link_to "Add Activity", new_venue_activity_path(@venue.id), class:"btn btn-primary" %>
+      <% if @venue.user.id == current_user.id %>
+        <%= link_to "Delete", @venue, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <%= link_to "Edit", edit_venue_path(@venue.id), class:"btn btn-warning" %>
+        <%= link_to "Add Activity", new_venue_activity_path(@venue.id), class:"btn btn-primary" %>
+      <% end %>
     </div>
   </div>
   <hr>
