@@ -5,9 +5,8 @@
     <%= link_to "Explore", activities_path, class: "btn btn-light"%>
   </div>
 </div>
-
+<h1>Activities Near You</h1>
 <div class="container">
-  <h1>Activities Near You</h1>
   <ul>
   <% @activities.each do |a| %>
       <div class="card" style="width: 18rem;" onclick="this.querySelector('a').click(); return true;">
