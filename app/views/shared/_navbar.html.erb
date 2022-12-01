@@ -7,7 +7,7 @@
       </a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         <%= link_to "My venues", my_venues_path, class: "dropdown-item" %>
-        <%= link_to "Bookings", root_path, class: "dropdown-item" %>
+        <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
       </ul>
 
