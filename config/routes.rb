@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :activities do
     resources :bookings, except: :index
   end
-  resources :venues
+
+  resources :venues do
+    resources :activities, only: :new
+  end
   get 'all_activities', to: 'activities#all_activities'
 
 
