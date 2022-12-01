@@ -24,14 +24,14 @@ class ActivitiesController < ApplicationController
 
     if params[:query].present?
       @activities = Activity.where("name ILIKE ?", "%#{params[:query]}%")
-      if @activities.empty?
-        @venues = Venue.where("name ILIKE ?", "%#{params[:query]}%")
-      else
-        @venues = []
-        @activities.each do |activity|
-          @venues << activity.venue
+        if @activities.empty?
+          @venues = Venue.where("name ILIKE ?", "%#{params[:query]}%")
+        else
+          @venues = []
+          @activities.each do |activity|
+            @venues << activity.venue
+          end
         end
-      end
     end
   end
 

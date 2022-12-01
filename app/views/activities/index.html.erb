@@ -1,13 +1,12 @@
-
 <div class="container">
-<% if params[:query].present? %>
-<ul>
-  <% @venues.each do |venue| %>
-    <li><%= venue.name %></li>
-    <% venue.activities.each do |activity| %>
-    <%= activity.name %>
-    <% end %>
+  <% if params[:query].present? %>
+    <ul>
+      <% @venues.each do |venue| %>
+        <li><%= venue.name %></li>
+        <% venue.activities.each do |activity| %>
+        <%= activity.name %>
+        <% end %>
+      <% end %>
+    </ul>
   <% end %>
-</ul>
-<% end %>
 </div>
