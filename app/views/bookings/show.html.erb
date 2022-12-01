@@ -4,5 +4,9 @@
 <%= @booking.user_party_size %>
 
 
-<%= @slot.booking.start_time %>
-<%= @slot.booking.end_time %>
+
+
+<%= @booking.slot.start_time %>
+<%= @booking.slot.end_time %>
+
+<%= link_to "Cancel", activity_booking_path(@booking),  class: "btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
