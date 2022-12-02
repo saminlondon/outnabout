@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :activities do
-    resources :bookings, except: :index
+    resources :bookings, except: %i[index destroy]
   end
 
   resources :venues do
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'all_activities', to: 'activities#all_activities'
 
 
-  resources :bookings, only: :index
+  resources :bookings, only: %i[index destroy]
 
   get "my_venues", to: 'venues#my_venues'
 
