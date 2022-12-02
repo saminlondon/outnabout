@@ -11,7 +11,12 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @activity = Activity.find(params[:activity_id])
+      @slots_available = Slot.where(activity: @activity).and(Slot.where(is_available: true))
+      # @slots_available.select! { |slot| slot.is_available == true }
       @booking = Booking.new
+      # @slots = @activity.slots.where(is_available: true)
+      # raise
+      # @booking.activity = @activity
     end
   end
 
@@ -32,7 +37,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
-
+      @booking.slot.update(is_available: false)
       redirect_to activity_booking_path(@activity.id, @booking.id)
 
     else

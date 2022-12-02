@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_160439) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_165353) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_160439) do
   create_table "slots", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
-    t.boolean "is_available"
+    t.boolean "is_available", default: true
     t.bigint "activity_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

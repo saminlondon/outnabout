@@ -1,24 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
 .hero {
-  background-color: #ffc116;
-  padding: 150px 0;
-  height: 400px;
-  margin-bottom: 20px;
+  background-image: url("https://images.hdqwalls.com/download/london-river-thames-aerial-view-sx-1440x900.jpg");
+  background-position: top;
+  overflow: hidden;
+  background-size: cover;
+  position: relative;
+  top: -78px;
+  // padding: 90px;
+  height: 650px;
+  // margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .hero h1 {
   margin: 0;
   font-family: 'DM Serif Display', serif;
-  font-size: 400px;
-  color: black;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 70px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .hero p {
   font-size: 20px;
-  color: black;
+  color: white;
   opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
