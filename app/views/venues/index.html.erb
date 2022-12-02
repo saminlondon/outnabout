@@ -1,5 +1,10 @@
 <div class="container">
-  <h1>Venues</h1>
+  <div class="my-venue-headers">
+    <h1>Venues</h1>
+    <div>
+      <%= link_to "Add Venue", new_venue_path, class:"btn btn-primary"%>
+    </div>
+  </div>
   <hr>
 
   <% @venues.each do |v| %>

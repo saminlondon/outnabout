@@ -24,14 +24,18 @@
           </li>
         </ul>
       </div>
+      <div>
+      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find an venue or activity"
+          %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        </div>
     </div>
-    <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an venue or activity"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+
+
     <% end %>
   <% else %>
     <div class="container-fluid" style="flex-direction: row-reverse;">

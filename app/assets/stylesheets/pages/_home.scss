@@ -1,12 +1,13 @@
 // Specific CSS for your home-page
 
-.container{
+.side-scroll{
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   // display: flex;
   // flex-wrap: nowrap;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 
