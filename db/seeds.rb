@@ -35,7 +35,7 @@ venue = Venue.create(name: "Queensway Skate Bowl Dine", address: "17 Queensway, 
 venue2 = Venue.create(name: "Capital Karts", address: "17 Queensway, London", description: "Join us for an evening of bowling, skating or dining", user_id: kamal.id)
 venue3 = Venue.create(name: "Flight Club", address: "17 Queensway, London", description: "Join us for an evening of bowling, skating or dining", user_id: yeon.id)
 
-activity = Activity.create(name: "hahjhdsk", description: "11 Bowling alleys accomodating 6 each", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 13, category: "bowling", venue_id: venue.id)
+activity = Activity.create(name: "Bowling", description: "11 Bowling alleys accomodating 6 each", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 13, category: "bowling", venue_id: venue.id)
 
 i = 10
 until i == 22
@@ -44,7 +44,7 @@ until i == 22
 end
 
 # puts "created #{Slot.count} slots"
-activity2 = Activity.create(name: "Skffffng", description: "11 Bowling alleys accomodating 6 each", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 13, category: "bowling", venue_id: venue.id)
+activity2 = Activity.create(name: "Skating", description: "11 Bowling alleys accomodating 6 each", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 13, category: "bowling", venue_id: venue.id)
 
 i = 11
 until i == 23
