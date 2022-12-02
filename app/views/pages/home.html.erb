@@ -1,24 +1,24 @@
 <div class="hero">
   <div class="container">
-    <h1>Why <strong>drink?</strong></h1>
+    <h1 class="banner-slogan">London has a lot to offer</h1>
     <p>Create meaningful memories by discovering new experiences all over London</p>
     <%= link_to "Explore", activities_path, class: "btn btn-light"%>
   </div>
 </div>
 <div class="container">
-<h1>Activities Near You</h1>
+  <h1>Activities Near You</h1>
   <ul>
-  <% @activities.each do |a| %>
+    <% @activities.each do |a| %>
       <div class="card" style="width: 18rem;" onclick="this.querySelector('a').click(); return true;">
         <div class="card-body">
           <div class = "card-price-box">
-            <h5 class="card-title"><%= link_to a.name.capitalize, activity_path(a.id), style: "text-decoration:none; color:black;"%> </h5>
+            <h5 class="card-title"><%= link_to a.name.capitalize, activity_path(a.id), style: "text-decoration:none; color:black;"%></h5>
             <p class="price-tag">$<%= a.price %>/person</p>
           </div>
-            <h6 class="card-subtitle mb-2 text-muted"><%= a.venue.name %> </h6>
-            <p class="card-text"><%= a.venue.address %></p>
+          <h6 class="card-subtitle mb-2 text-muted"><%= a.venue.name %> </h6>
+          <p class="card-text"><%= a.venue.address %></p>
         </div>
       </div>
-  <% end %>
+    <% end %>
   </ul>
 </div>
