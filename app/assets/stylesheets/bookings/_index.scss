@@ -9,10 +9,18 @@
 
 
 .booking-card {
-  background: rgb(233, 194, 194);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: rgb(240, 214, 195);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   margin: 30px;
   padding: 20px;
   display: grid;
   border-radius: 10px;
+  width: fit-content;
+}
+
+.cancel-button {
+}
+
+.cards {
+  display: grid;
 }
