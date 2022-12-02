@@ -2,10 +2,11 @@
   <div class="container">
     <h1 class="banner-slogan">London has a lot to offer</h1>
     <p>Create meaningful memories by discovering new experiences all over London</p>
-    <%= link_to "Explore", activities_path, class: "btn btn-light"%>
+    <%= link_to "Explore", all_activities_path, class: "btn btn-light"%>
   </div>
 </div>
 <div class="container">
+<div class="home-content">
   <h1>Activities Near You</h1>
   <ul>
     <% @activities.each do |a| %>
