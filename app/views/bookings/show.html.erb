@@ -5,4 +5,4 @@
 <p>The booking is on <%= @booking.slot.start_time.strftime("%e %B") %> from <%= @booking.slot.start_time.strftime("%H:%M")%> to <%= @booking.slot.end_time.strftime("%H:%M") %> </p>
 
 
-<%= link_to "Cancel", activity_booking_path(@booking),  class: "btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<%# <%= link_to "Cancel", activity_booking_path(@booking),  class: "btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

@@ -2,11 +2,8 @@
 
 <% @bookings.each do |b| %>
 
-
 <p>The booking is for <%= b.user_party_size %> people </p>
 <p>The booking is on <%= b.slot.start_time.strftime("%e %B") %> from <%= b.slot.start_time.strftime("%H:%M")%> to <%= b.slot.end_time.strftime("%H:%M") %> </p>
-
+<%= link_to "Cancel", booking_path(b), class: "btn btn-warning", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 
 <% end %>
-
-<%= link_to "Cancel", bookings_path,  class: "btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
