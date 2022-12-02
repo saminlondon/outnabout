@@ -1,9 +1,10 @@
-<%= simple_form_for [@activity, @booking] do |f| %>
-<%= f.association :slot, label_method: :slot_time, value_method: :id, collection: @slots_available  %>
-<%# <% f.input :activity, as => :hidden, :input_html => { :value => @activity.current_user.slots.pluck(:activity_id).uniq} %>
-<%= f.input :user_party_size, as: :integer %>
-<%= f.button :submit, 'Book' %>
-<% end %>
-
+<div class="container">
+  <%= simple_form_for [@activity, @booking] do |f| %>
+  <%= f.association :slot, label_method: :slot_time, value_method: :id, collection: @slots_available  %>
+  <%# <% f.input :activity, as => :hidden, :input_html => { :value => @activity.current_user.slots.pluck(:activity_id).uniq} %>
+  <%= f.input :user_party_size, as: :integer %>
+  <%= f.button :submit, 'Book' %>
+  <% end %>
+</div>
 
 <%# collection: Slot.where(is_available: true) %>
