@@ -1,8 +1,10 @@
 <div class="container">
-  <h1>Thanks for booking!</h1>
+  <h1>Thanks for choosing OutNAbout!</h1>
+  <h2>Your booking is confirmed!</h2>
   <div class="booking-card-show">
-    <p><%= @booking.slot.activity.name %></p>
+    <h3><%= @booking.slot.activity.name %></h3>
     <p>The booking is for <%= @booking.user_party_size %> people </p>
     <p>The booking is on <%= @booking.slot.start_time.strftime("%e %B") %> from <%= @booking.slot.start_time.strftime("%H:%M")%> to <%= @booking.slot.end_time.strftime("%H:%M") %> </p>
   </div>
+  <%= link_to "Back", all_activities_path, class: "btn btn-dark" %>
 </div>
