@@ -6,5 +6,5 @@
     <p>The booking is for <%= @booking.user_party_size %> people </p>
     <p>The booking is on <%= @booking.slot.start_time.strftime("%e %B") %> from <%= @booking.slot.start_time.strftime("%H:%M")%> to <%= @booking.slot.end_time.strftime("%H:%M") %> </p>
   </div>
-  <%= link_to "Back", all_activities_path, class: "btn btn-dark" %>
+  <%= link_to "Back", root_path, class: "btn btn-dark" %>
 </div>
