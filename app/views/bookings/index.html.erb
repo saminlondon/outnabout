@@ -1,6 +1,6 @@
 <h1>Your bookings</h1>
 
-
+<% @bookings.each do |b| %>
 <%= b.user_party_size %>
 
 <%= b.slot.start_time %>

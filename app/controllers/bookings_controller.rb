@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
-
+      @booking.slot.is_available = false
       redirect_to activity_booking_path(@activity.id, @booking.id)
 
     else
