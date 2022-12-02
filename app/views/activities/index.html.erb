@@ -1,11 +1,29 @@
-<div class="container">
+<div class="search-result-container container">
+
   <% if params[:query].present? %>
     <ul>
       <% @venues.each do |venue| %>
-        <li><%= venue.name %></li>
-        <% venue.activities.each do |activity| %>
-        <%= activity.name %>
-        <% end %>
+      <div class="container">
+        <div class="card">
+          <div class="imgBx">
+            <img src="https://www.cannonraceway.co.uk/wp-content/uploads/2018/07/slide3.png">
+          </div>
+            <div class="contentBx">
+              <h2><%=venue.name%></h2>
+              <% venue.activities.each do |activity| %>
+              <div class="size">
+              <h3>Activity :</h3>
+              <span><%= activity.name %></span>
+            </div>
+            <div class="color">
+              <h3>Description :</h3>
+              <span><%= activity.description %></span>
+            </div>
+            <a href="#">Book Now </a>
+            <% end %>
+         </div>
+       </div>
+     </div>
       <% end %>
     </ul>
   <% end %>
