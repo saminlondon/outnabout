@@ -8,19 +8,28 @@
 <div class="container">
 <div class="home-content">
   <h1>Activities Near You</h1>
-    <ul>
-      <% @activities.each do |a| %>
-        <div class="card" style="width: 18rem;" onclick="this.querySelector('a').click(); return true;">
-          <div class="card-body">
-            <div class = "card-price-box">
-              <h5 class="card-title"><%= link_to a.name.capitalize, activity_path(a.id), style: "text-decoration:none; color:black;"%></h5>
-              <p class="price-tag">$<%= a.price %>/person</p>
-            </div>
-            <h6 class="card-subtitle mb-2 text-muted"><%= a.venue.name %> </h6>
-            <p class="card-text"><%= a.venue.address %></p>
+  <ul>
+    <% @activities.each do |a| %>
+      <div class="card" style="width: 18rem;" onclick="this.querySelector('a').click(); return true;">
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="https://www.cannonraceway.co.uk/wp-content/uploads/2018/07/slide3.png">
           </div>
-        </div>
-      <% end %>
-    </ul>
-  </div>
+          <div class="contentBx">
+            <h2><%=a.name%></h2>
+              <div class="size">
+              <h3>Address :</h3>
+              <span><%= a.venue.address %></span>
+            </div>
+            <div class="color">
+              <h3>Description :</h3>
+              <span><%= a.description %></span>
+            </div>
+            <%= link_to "Book",  new_activity_booking_path(a.id), class:"btn btn-primary"%>
+         </div>
+       </div>
+      </div>
+    <% end %>
+  </ul>
 </div>
