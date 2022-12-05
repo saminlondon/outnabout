@@ -37,6 +37,33 @@ class ActivitiesController < ApplicationController
 
   def all_activities
     @activities = Activity.all
+    if params[:query].present?
+      if params[:query].present?
+        sql_query = "category ILIKE :query or price ILIKE :query"
+        @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @activities = Activity.all
+      end
+    else
+      if params[:category] == "bowling"
+        @activities = Activity.where(category: "bowling")
+      end
+      if params[:category] == "skating"
+        @activities = Activity.where(category: "skating")
+      end
+      if params[:category] == "darts"
+        @activities = Activity.where(category: "darts")
+      end
+      if params[:category] == "karting"
+        @activities = Activity.where(category: "karting")
+      end
+      if params[:category] == "escape room"
+        @activities = Activity.where(category: "escape room")
+      end
+      # if params[:price] == "escape room"
+      #   @activities = Activity.where(category: "escape room")
+      # end
+    end
   end
 
   def new
