@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @activities = Activity.all
-    @venue = Venue.all
+    @venues = Venue.all
   end
 end
