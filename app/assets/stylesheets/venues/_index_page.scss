@@ -1,16 +1,16 @@
-.index-card{
-  background-color: white;
+
+
+.venues-card{
+  background: #e6eaf8;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 30px;
   padding: 20px;
-  margin: 10px;
-  height: 200px;
-  width: 600px;
+  display: grid;
+  border-radius: 10px;
+  width: fit-content;
 }
 
-.venues-content{
-  display: flex;
-  justify-content: space-between;
-}
 
-.my-venue-headers{
-  position: sticky;
+.venues-cards {
+  display: grid;
 }

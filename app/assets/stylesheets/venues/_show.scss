@@ -1,5 +1,9 @@
-.show-page-headers{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.venue-show-cards {
+  background: #e6eaf8;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 30px;
+  padding: 20px;
+  display: grid;
+  border-radius: 10px;
+  width: fit-content;
 }

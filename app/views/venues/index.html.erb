@@ -5,19 +5,21 @@
       <%= link_to "Add Venue", new_venue_path, class:"btn btn-primary"%>
     </div>
   </div>
-  <hr>
-  <div class="venues-content">
+
+  <div class="venues-cards">
     <% @venues.each do |v| %>
-    <div class="index-card" onclick="this.querySelector('a').click(); return true;">
-        <h5><%= link_to v.name, venue_path(v.id)%> - <%= v.address %></h5></li>
-        <p><%= v.description %></p>
+    <div class="venues-card">
+      <div class="index-card" onclick="this.querySelector('a').click(); return true;">
+          <h5><%= link_to v.name, venue_path(v.id)%> - <%= v.address %></h5></li>
+          <p><%= v.description %></p>
+      </div>
     </div>
-      <% end %>
+    <% end %>
+  </div>
 
     <div style="width: 100%; height: 600px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  </div>
 </div>
