@@ -14,5 +14,5 @@ class Activity < ApplicationRecord
   validates :price, presence: true
   validates :operational_end_time, presence: true
 
-
+  has_one_attached :photo
 end
