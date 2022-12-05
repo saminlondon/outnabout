@@ -11,7 +11,7 @@
         <div class="cancel-button">
           <%= link_to "See Activity", activity_path(b.slot.activity_id), class: "btn btn-warning" %>
           <%= link_to "See Venue", venue_path(b.slot.activity.venue_id), class: "btn btn-warning" %>
-          <%= link_to "Cancel", booking_path(b.slot.activity), class: "btn btn-warning", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <%= link_to "Cancel", b, class: "btn btn-warning", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         </div>
       </div>
     <% end %>

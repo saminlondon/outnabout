@@ -7,6 +7,7 @@
 </div>
 <div class="container">
 <div class="home-content">
+
   <h1>Recently Added</h1>
     <ul>
       <% @activities.each do |a| %>
@@ -19,8 +20,20 @@
             <h6 class="card-subtitle mb-2 text-muted"><%= a.venue.name %> </h6>
             <p class="card-text"><%= a.venue.address %></p>
           </div>
-        </div>
-      <% end %>
-    </ul>
-  </div>
+          <div class="contentBx">
+            <h2><%=a.name%></h2>
+              <div class="size">
+              <h3>Address :</h3>
+              <span><%= a.venue.address %></span>
+            </div>
+            <div class="color">
+              <h3>Description :</h3>
+              <span><%= a.description %></span>
+            </div>
+            <%= link_to "Book",  new_activity_booking_path(a.id), class:"btn btn-primary"%>
+         </div>
+       </div>
+      </div>
+    <% end %>
+  </ul>
 </div>
