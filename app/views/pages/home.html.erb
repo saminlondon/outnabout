@@ -6,27 +6,30 @@
   </div>
 </div>
 <div class="container">
-  <% @venues.each do |v| %>
-    <div class="cards row">
-      <div class="col-6 portada">
-      </div>
-      <div class="col-6">
-        <div class="title-total">
-          <div class="title"><%= v.name %></div>
+  <div class="scrollmenu">
+    <% @venues.each do |v| %>
+      <div class="home-card">
+        <div class="w-50 portada">
+        </div>
+        <div class="w-50">
+          <div class="title-total">
+            <div class="title">
+              <%= v.name %>
+            </div>
             <% v.activities.each do |a|  %>
-                  <h2><%= a.name %></h2>
-                  <div class="desc"><%= a.description %>
-                  </div>
-                <% end %>
-                <div class="actions">
-                  <button><i class="far fa-heart"></i></button>
-                  <button><i class="far fa-envelope"></i></button>
-                  <button><i class="fas fa-user-friends"></i></button>
-                </div>
+              <h2><%= a.name %></h2>
+              <div class="desc">
+                <%= a.description %>
+              </div>
+            <% end %>
+            <div class="actions">
+              <button><i class="far fa-heart"></i></button>
+              <button><i class="far fa-envelope"></i></button>
+              <button><i class="fas fa-user-friends"></i></button>
+            </div>
           </div>
+        </div>
       </div>
-
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
