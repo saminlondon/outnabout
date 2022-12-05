@@ -1,7 +1,7 @@
 <div class="bookings-container">
   <h1>My bookings</h1>
 
-  <div class="cards">
+  <div class="booking-cards">
     <% @bookings.each do |b| %>
       <div class="booking-card">
         <h2><strong><%= b.slot.activity.name %></strong></h2>
