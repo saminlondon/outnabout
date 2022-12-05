@@ -12,7 +12,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
+  <body>
+    <%= render "shared/navbar" %>
+    <%= render "shared/search" %>
     <%= yield %>
     <%= render "shared/flashes" %>
   </body>
