@@ -82,3 +82,5 @@ end
 gem "pg_search"
 
 # gem "cssbundling-rails", "~> 1.1"
+gem "cloudinary"
+gem "dotenv-rails", groups: [:development, :test]
