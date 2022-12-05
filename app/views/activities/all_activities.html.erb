@@ -27,15 +27,15 @@
       </div>
     </div>
   <hr>
-
   <ul>
   <% @activities.each do |a| %>
     <div class="card mb-3">
-     <%= image_tag("https://www.qmsu.org/asset/Organisation/8415/QMSU-1.jpeg", height: "40px", width: "200px") %>
+        <% if a.photo.attached? %>
+          <%= cl_image_tag a.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
         <p><%= link_to a.name, activity_path(a) %></p>
         <p><%= a.venue.name %> <br><%= a.venue.address %></p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
   <% end %>
-
 </div>
