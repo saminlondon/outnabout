@@ -1,18 +1,20 @@
 <div class="container">
   <h1><%= @activity.name.capitalize %> - <%= @activity.venue.name %></h1>
-  <h3><%= @activity.venue.address %> (<%= @activity.operational_start_time.strftime("%I:%M%p")%> - <%= @activity.operational_end_time.strftime("%I:%M%p") %>)</h3>
-  <h3> $<%= @activity.price %>/person</h3>
-  <br>
+  <div class="activity-show-margin">
+    <h3><%= @activity.venue.address %> (<%= @activity.operational_start_time.strftime("%I:%M%p")%> - <%= @activity.operational_end_time.strftime("%I:%M%p") %>)</h3>
+    <h3> $<%= @activity.price %>/person</h3>
+    <br>
 
-  <% if @activity.photo.present? %>
-  <%= cl_image_tag @activity.photo.key, crop: :fill %>
-  <% end %>
+    <% if @activity.photo.present? %>
+    <%= cl_image_tag @activity.photo.key, crop: :fill %>
+    <% end %>
 
-  <h5>Description</h5>
-  <p><%= @activity.description %></p>
-  <br>
-  <h5>About <%= @activity.venue.name %></h5>
-  <p><%= @activity.venue.description %></p>
+    <h5>Description</h5>
+    <p><%= @activity.description %></p>
+    <br>
+    <h5>About <%= @activity.venue.name %></h5>
+    <p><%= @activity.venue.description %></p>
+  </div>
 
   <%= link_to "Back", root_path, class: "btn btn-dark" %>
 
@@ -28,7 +30,7 @@
     <%= f.association :slot, label: 'Please choose a time slot', label_method: :slot_time, value_method: :id, collection: @slots_available  %>
     <%# <% f.input :activity, as => :hidden, :input_html => { :value => @activity.current_user.slots.pluck(:activity_id).uniq} %>
     <%= f.input :user_party_size, label: 'Please choose a party size', as: :integer %>
-    <%= f.button :submit, 'Book' %>
+    <%= f.button :submit, 'Book', class:"btn btn-light" %>
     <% end %>
     <% end %>
   </div>
