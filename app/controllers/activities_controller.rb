@@ -50,6 +50,8 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @slots_available = Slot.available.where(activity: @activity)
   end
 
   def create
