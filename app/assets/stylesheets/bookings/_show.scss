@@ -3,10 +3,22 @@
 }
 
 .booking-card-show {
-  background: rgb(235, 209, 190);
+
+
+  background: #e6eaf8;
+
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 30px;
   padding: 20px;
   display: grid;
   border-radius: 10px;
+}
+
+.bookingconfirm {
+  color: #e6eaf8;
+  margin-left: 30px;
+}
+
+.btn-dark {
+  margin-left: 37px;
 }
