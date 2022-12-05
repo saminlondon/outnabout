@@ -1,46 +1,15 @@
-<nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
-  <% if user_signed_in? %>
-    <div class="container-fluid">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" style= "height: 40px; width: 40px; border-radius: 100%;">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <%= link_to "My venues", my_venues_path, class: "dropdown-item" %>
-        <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
-        <hr>
-        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-      </ul>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Activities", all_activities_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Venues", venues_path, class: "nav-link" %></li>
-        </ul>
-      </div>
-    <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an venue or activity"
-      %>
-      <%= submit_tag "Search", class: "btn btn-light", style:"display:none;" %>
-    <% end %>
-    </div>
-  <% else %>
-    <div class="container-fluid" style="flex-direction: row-reverse;">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Login/sign-up
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><%= link_to "Sign Up", new_user_registration_path, class:"dropdown-item" %></li>
-          <li><%= link_to "Login", new_user_session_path, class:"dropdown-item" %></li>
 
-        </ul>
-      </div>
-    </div>
-  <% end %>
+<nav class="mobile-nav">
+
+        <%= link_to root_path, class:"bloc-icon" do %>
+          <i class="bi bi-house-door"></i>
+        <% end %>
+
+        <%= link_to bookings_path, class:"bloc-icon" do %>
+          <i class="bi bi-book"></i>
+        <% end %>
+
+        <a href="#" class="bloc-icon">
+            <i class="bi bi-person-circle"></i>
+        </a>
 </nav>
