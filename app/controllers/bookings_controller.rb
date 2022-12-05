@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @activity = Activity.find(params[:activity_id])
-      @slots_available = Slot.where(activity: @activity).and(Slot.where(is_available: true))
+      @slots_available = Slot.available.where(activity: @activity)
       # @slots_available.select! { |slot| slot.is_available == true }
       @booking = Booking.new
       # @slots = @activity.slots.where(is_available: true)
@@ -63,7 +63,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_party_size, :slot_id)
+    params.require(:booking).permit(:user_party_size, :slot_id, :activity_date)
   end
 
   def set_booking

@@ -15,4 +15,8 @@ class Activity < ApplicationRecord
   validates :operational_end_time, presence: true
 
   has_one_attached :photo
+
+  def slot_time
+    "#{@activity.slots.start_time.strftime("%R")} - #{@activity.slots.end_time.strftime("%R")}"
+  end
 end

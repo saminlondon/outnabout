@@ -10,12 +10,24 @@
   <br>
   <h5>About <%= @activity.venue.name %></h5>
   <p><%= @activity.venue.description %></p>
+
   <%= link_to "Back", root_path, class: "btn btn-dark" %>
-  <% if current_user != @activity.venue.user %>
-    <%= link_to "Book", new_activity_booking_path(@activity) %>
-  <% end %>
+ 
   <% if current_user && current_user == @activity.venue.user %>
     <%= link_to "Delete", @activity, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     <%= link_to "Edit", edit_activity_path, class: "btn btn-warning" %>
   <% end %>
+
+  <div class="container">
+  <% if current_user != @activity.venue.user %>
+  <%= simple_form_for [@activity, @booking] do |f| %>
+  <%= f.input :activity_date, as: :string, input_html: {type: :date}%>
+  <%= f.association :slot, label: 'Please choose a time slot', label_method: :slot_time, value_method: :id, collection: @slots_available  %>
+  <%# <% f.input :activity, as => :hidden, :input_html => { :value => @activity.current_user.slots.pluck(:activity_id).uniq} %>
+  <%= f.input :user_party_size, label: 'Please choose a party size', as: :integer %>
+  <%= f.button :submit, 'Book' %>
+  <% end %>
+  <% end %>
+  </div>
+
 </div>

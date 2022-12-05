@@ -1,4 +1,4 @@
-<div class="container">
+<div class="bookings-container">
   <h1>Your bookings</h1>
 
   <div class="cards">
@@ -7,11 +7,11 @@
         <h3><%= b.slot.activity.name %></h3>
         <p><%= b.slot.activity.venue.address %></p>
         <p>The booking is for <%= b.user_party_size %> people </p>
-        <p>The booking is on <%= b.slot.start_time.strftime("%e %B") %> from <%= b.slot.start_time.strftime("%H:%M")%> to <%= b.slot.end_time.strftime("%H:%M") %></p>
+        <p>The booking is on <%= b.activity_date.strftime("%e %B") %> from <%= b.slot.start_time.strftime("%H:%M") %> to <%= b.slot.end_time.strftime("%H:%M") %></p>
         <div class="cancel-button">
           <%= link_to "See Activity", activity_path(b.slot.activity_id), class: "btn btn-warning" %>
           <%= link_to "See Venue", venue_path(b.slot.activity.venue_id), class: "btn btn-warning" %>
-          <%= link_to "Cancel", booking_path(b.slot.activity), class: "btn btn-warning", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <%= link_to "Cancel", b, class: "btn btn-warning", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         </div>
       </div>
     <% end %>
