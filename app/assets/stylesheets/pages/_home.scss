@@ -116,6 +116,7 @@ button {
 }
 
 .scrollmenu {
+  margin: 0px 0px 70px 0.5px;
   display: flex;
   width: 100vw;
   background-color: #333;
@@ -127,4 +128,12 @@ button {
   text-decoration: none;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+}
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  scroll-behavior: smooth;
+
 }
