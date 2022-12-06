@@ -3,16 +3,15 @@
     <%# <div class="col-md-3"><%= image_tag , width: '100%' %>
     <div class="col">
       <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @activity.name %></strong> for <strong><%= humanized_money_with_symbol @activity.price %></strong></p>
+      <p>Purchase of <strong><%= @activity.name %></strong> for <%= @booking.user_party_size %> for <strong><%= humanized_money_with_symbol @activity.price %></strong></p>
       <button id="pay" class="btn btn-primary">Pay</button>
-      # Commented for the lecture, remove comments.
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
         paymentButton.addEventListener('click', () => {
           const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
           stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
+            sessionId: '<%= @booking.checkout_session_id %>'
           });
         });
       </script>
