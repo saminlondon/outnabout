@@ -1,8 +1,30 @@
 .container-form-booking {
-  color: #e6eaf8;
+  color: black;
   margin-top: 30px !important;
 }
 
-.activity-show-margin {
-  margin-left: 20px !important;
+// .activity-show-margin {
+//   margin-left: 20px !important;
+// }
+
+.activity-show-container {
+  margin: 20px;
+}
+
+
+// .activity-show-image {
+//   max-width: inherit;
+
+// }
+
+// .activity-show-margin image {
+//   max-width: -webkit-fill-available;
+// }
+
+
+.activity-show-container {
+  img {
+    max-width: -webkit-fill-available;
+
+  }
 }
