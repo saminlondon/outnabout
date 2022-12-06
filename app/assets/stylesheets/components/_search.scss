@@ -1,16 +1,20 @@
 .search{
     z-index: 100;
-    position: sticky;
-    top: 14px;
+    position: relative;
+    top: 190px;
     margin: 0 auto;
 }
 
 .form-control{
-  border-radius: 100px;
-  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #464087 ;
+  width: 90vw;
+  height:45px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
+  color: white;
   font-size: 13px;
+  background-color: #413c7d;
 
 }
 

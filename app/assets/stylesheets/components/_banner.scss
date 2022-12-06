@@ -1,34 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@200;400;500;600;700&display=swap');
 .hero {
-  background-image: url("https://images.hdqwalls.com/download/london-river-thames-aerial-view-sx-1440x900.jpg");
-  background-position: top;
-  overflow: hidden;
-  background-size: cover;
+  background-color: #362e77;
   position: relative;
   top: -78px;
-  // padding: 90px;
-  height: 650px;
-  margin-bottom: 0px;
-  display: flex;
+  padding: 20px;
+  height: 345px;
   align-items: center;
 }
 
-.hero h1 {
+#logo{
+  position: relative;
+  top: 28px;
+  color: orange;
+  font-family: 'Alexandria', sans-serif;
+ }
+
+.hero-text{
+  position: relative;
+  font-family: 'Alexandria', sans-serif;
+  top: 85px;
+}
+
+.hero .hero-text h1{
   margin: 0;
-  font-family: 'DM Serif Display', serif;
-  font-size: 70px;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 30px;
   color: white;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
-.hero p {
+.hero .hero-text p {
   font-size: 20px;
-  color: white;
+  font-family: 'Alexandria', sans-serif;
+  color: #a2a0bd;
   opacity: .7;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .banner-slogan{
   margin-bottom: 10px;
+}
+
+.home-boxes{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -138px;
+}
+
+.venue-box{
+  padding: 30px;
+  background-color: white;
+  font-size: 30px;
+  width: 115px;
+  border-radius: 15px;
+  height: 100px;
+  margin: 14px;
+  text-align: center;
+  padding-bottom: 84px;
+}
+
+.venue-box i{
+  color: orange;
+}
+.box-text{
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 200;
 }

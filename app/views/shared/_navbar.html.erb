@@ -1,6 +1,5 @@
 
 <nav class="mobile-nav">
-
         <%= link_to root_path, class:"bloc-icon" do %>
           <i class="bi bi-house-door"></i>
         <% end %>
@@ -9,7 +8,7 @@
           <i class="bi bi-book"></i>
         <% end %>
 
-        <a href="#" class="bloc-icon">
+        <%= link_to profile_path, class:"bloc-icon" do %>
             <i class="bi bi-person-circle"></i>
-        </a>
+        <% end %>
 </nav>
