@@ -1,23 +1,28 @@
-<div class="container">
-  <div class="my-venue-headers">
-    <h1 class="mt-4">Venues</h1>
-    <div>
-      <%= link_to "Add Venue", new_venue_path, class:"btn btn-primary mt-3"%>
-    </div>
-  </div>
-
-  <div class="venues-cards">
-    <% @venues.each do |v| %>
-    <div class="venues-card">
-      <div class="index-card" onclick="this.querySelector('a').click(); return true;">
-          <h5><%= link_to v.name, venue_path(v.id)%> - <%= v.address %></h5></li>
-          <p><%= v.description %></p>
+<div class="venues-index">
+  <div class="index-head">
+    <div class="my-venue-headers">
+      <h1 class="mt-4">Venues</h1>
+      <div>
+        <%= link_to "Add Venue", new_venue_path, class:"btn btn-primary mt-3", style:"border-radius:5px;"%>
       </div>
     </div>
-    <% end %>
+    <hr>
   </div>
+  <% @venues.each do |v| %>
+    <div class="card-trip">
+      <img src="<%= v.activities.first.photo.attached? ? (cl_image_path v.activities.first.photo.key) : 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= v.name %></h2>
+          <p><%= v.address %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-    <div style="width: 100%; height: 600px;"
+
+
+    <div class="map"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

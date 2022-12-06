@@ -2,23 +2,16 @@
 .hero {
   background-color: #362e77;
   position: relative;
-  top: -78px;
+  top: -130px;
   padding: 20px;
   height: 345px;
   align-items: center;
 }
 
-#logo{
-  position: relative;
-  top: 28px;
-  color: orange;
-  font-family: 'Alexandria', sans-serif;
- }
-
 .hero-text{
   position: relative;
   font-family: 'Alexandria', sans-serif;
-  top: 85px;
+  top: 115px;
 }
 
 .hero .hero-text h1{
@@ -45,7 +38,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  top: -138px;
+  top: -200px;
 }
 
 .venue-box{

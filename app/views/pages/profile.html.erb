@@ -1,22 +1,29 @@
+
 <div class="profile-container">
-  <div class="profile-top">
-    <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
-    <h3><%= current_user.email %></h3>
-    <p>Member since <%= current_user.created_at.strftime("%d-%m-%Y") %></p>
-    <%= link_to "Edit Profile", edit_user_registration_path, class:"btn btn-primary" %>
-  </div>
-  <hr>
-   <div>
-    <div class="profile-h1">
-      <h3>My Venues</h3>
-      <%= link_to new_venue_path do%>
-        <i class="bi bi-plus-circle-fill"></i>
+  <% if user_signed_in? %>
+    <div class="profile-top">
+      <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+      <h3><%= current_user.email %></h3>
+      <p>Member since <%= current_user.created_at.strftime("%d-%m-%Y") %></p>
+      <%= link_to "Edit Profile", edit_user_registration_path, class:"btn btn-primary" %>
+      <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"btn btn-secondary" %>
+    </div>
+    <hr>
+    <div>
+      <div class="profile-h1">
+        <h3>My Venues</h3>
+        <%= link_to new_venue_path do%>
+          <i class="bi bi-plus-circle-fill"></i>
+        <% end %>
+      </div>
+      <% @venues.each do |v| %>
+      <h5><%= link_to v.name, venue_path(v.id) %></h5>
+      <h6><%= v.address %></h6>
+      <p><%= v.description %></p>
       <% end %>
     </div>
-    <% @venues.each do |v| %>
-    <h5><%= link_to v.name, venue_path(v.id) %></h5>
-    <h6><%= v.address %></h6>
-    <p><%= v.description %></p>
-    <% end %>
-  </div>
+  <% else %>
+    <%= link_to "Login", new_user_session_path  %>
+    <%= link_to "Sign Up", new_user_registration_path  %>
+  <% end %>
 </div>
