@@ -1,0 +1,16 @@
+.top-navbar{
+  display: flex;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  background-color: #f7f6fa;
+}
+
+#logo{
+  color: orange;
+  font-family: 'Alexandria', sans-serif;
+ }
