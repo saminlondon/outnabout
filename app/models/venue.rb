@@ -12,4 +12,6 @@ class Venue < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true
 
+  has_one_attached :photo
+
 end

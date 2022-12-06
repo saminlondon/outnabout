@@ -5,6 +5,8 @@ class Activity < ApplicationRecord
 
   has_many :slots
 
+
+
   belongs_to :venue
 
   validates :name, presence: true
