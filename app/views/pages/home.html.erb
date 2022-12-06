@@ -2,8 +2,12 @@
 
 <div class="hero">
   <div class="hero-text">
-    <h1 class="banner-slogan">Hello <%= current_user.first_name %>!</h1>
-    <p>London has a lot to offer</p>
+    <% if user_signed_in? %>
+      <h1 class="banner-slogan">Hello <%= current_user.first_name %>!</h1>
+    <% else %>
+      <h1 class="banner-slogan">Out N' About</h1>
+    <% end %>
+    <p>Discover what the world has to offer</p>
       <%# <%= link_to "Explore", all_activities_path, class: "btn btn-light"%>
   </div>
 </div>
