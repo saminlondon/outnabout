@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy, :checkout]
 
   def index
     @bookings = Booking.all
@@ -38,11 +38,40 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       @booking.slot.update(is_available: false)
-      redirect_to activity_booking_path(@activity.id, @booking.id)
+      redirect_to checkout_path(@activity.id, @booking.id)
 
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def checkout
+    @activity = Activity.find(params[:activity_id])
+    # @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @activity_price = @activity.price.to_f
+
+      session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        line_items: [
+          quantity: 1,
+          price_data: {
+            unit_amount: (@activity_price * 100).to_i,
+            currency: 'gbp',
+            product_data: {
+              name: "your booking",
+              description: "Activity",
+              images: ['https://example.com/t-shirt.png'],
+            }
+          }
+        ],
+        mode: "payment",
+        success_url: "http://localhost:3000/activities/#{@activity.id}/bookings/#{@booking.id}",
+        cancel_url: "http://localhost:3000/activities/#{@activity.id}/bookings/#{@booking.id}"
+      )
+
+        @booking.update(checkout_session_id: session.id)
+      # redirect_to activity_booking_path(@activity.id, @booking.id)
   end
 
   def edit

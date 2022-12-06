@@ -23,7 +23,7 @@
     <%= link_to "Edit", edit_activity_path, class: "btn btn-warning" %>
   <% end %>
 
-  <div class="container">
+  <div class="container-form-booking">
     <% if current_user != @activity.venue.user %>
     <%= simple_form_for [@activity, @booking] do |f| %>
     <%= f.input :activity_date, as: :string, input_html: {type: :date}%>
