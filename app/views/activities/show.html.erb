@@ -1,13 +1,14 @@
-<div class="container">
-  <h1><%= @activity.name.capitalize %> - <%= @activity.venue.name %></h1>
+<div class="activity-show-container">
+  <h1><strong><%= @activity.name.capitalize %></strong> at <%= @activity.venue.name %></h1>
   <div class="activity-show-margin">
-    <h3><%= @activity.venue.address %> (<%= @activity.operational_start_time.strftime("%I:%M%p")%> - <%= @activity.operational_end_time.strftime("%I:%M%p") %>)</h3>
-    <h3> $<%= @activity.price %>/person</h3>
+    <h5><%= @activity.venue.address %> (<%= @activity.operational_start_time.strftime("%I:%M%p")%> - <%= @activity.operational_end_time.strftime("%I:%M%p") %>)</h5>
+    <h4> £<%= @activity.price %>/person</h4>
     <br>
-
-    <% if @activity.photo.present? %>
-    <%= cl_image_tag @activity.photo.key, crop: :fill %>
-    <% end %>
+    <div class="activity-show-image">
+      <% if @activity.photo.present? %>
+      <%= cl_image_tag @activity.photo.key, crop: :fill %>
+      <% end %>
+    </div>
 
     <h5>Description</h5>
     <p><%= @activity.description %></p>
