@@ -35,6 +35,7 @@ venue = Venue.create(name: "Queensway Skate Bowl Dine", address: "17 Queensway, 
 venue2 = Venue.create(name: "Capital Karts", address: "95 Brick Ln, London E1 6QL", description: "Join us for an evening of bowling, skating or dining", user_id: kamal.id)
 venue3 = Venue.create(name: "Flight Club", address: "17 Queensway, London", description: "Join us for an evening of bowling, skating or dining", user_id: yeon.id)
 
+
 activity = Activity.create(name: "Bowling", description: "11 Bowling alleys accomodating 6 each", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 13, category: "bowling", venue_id: venue.id)
 
 i = 10
@@ -63,5 +64,13 @@ activity4 = Activity.create(name: "Darts", description: "11 Bowling alleys accom
 i = 12
 until i == 23
   Slot.create!(activity: activity4, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
+  i += 1
+end
+
+venue5 = Venue.create(name: "All Star Lanes Brick Lane", address: "95 Brick Lane, London E1 6QL", description: "London's original good time. Grab your crew and roll with us!", user_id: maaz.id)
+activity5 = Activity.create(name: "Bowling", description: "11 Bowling alleys accomodating 6 each", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 13, category: "bowling", venue_id: venue5.id)
+i = 12
+until i == 23
+  Slot.create!(activity: activity5, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
   i += 1
 end
