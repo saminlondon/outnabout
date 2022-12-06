@@ -22,29 +22,22 @@
     <p class="box-text">Venues</p>
   </div>
 </div>
-<div class="container ">
+<div class="container home-cards-container">
   <div class="scrollmenu">
-    <% @venues.each do |v| %>
-      <div class="home-card" >
-        <div class="w-50 portada" style="background-image: url(<%= v.activities.first.photo.attached? ? (cl_image_path v.activities.first.photo.key) : 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>)">
-        </div>
-        <div class="w-50">
-          <div class="title-total">
-            <div class="title">
-              <%= v.name %>
-            </div>
-            <% v.activities.each do |a|  %>
-              <h2><%= a.name %></h2>
-              <div class="desc">
-                <%= a.description %>
-              </div>
-            <% end %>
-            <div class="actions">
-              <button><i class="far fa-heart"></i></button>
-              <button><i class="far fa-envelope"></i></button>
-              <button><i class="fas fa-user-friends"></i></button>
-            </div>
+    <% @venues.each do |venue| %>
+      <div class="card-trip">
+        <% if venue.activities.first.photo.attached? %>
+        <%= cl_image_tag venue.activities.first.photo.key %>
+        <% else %>
+        <%= 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= venue.activities.first.name %></h2>
+            <p><%= venue.activities.first.description %></p>
           </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
     <% end %>

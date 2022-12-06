@@ -29,13 +29,17 @@
   <hr>
   <ul>
   <% @activities.each do |a| %>
-    <div class="card mb-3">
-        <% if a.photo.attached? %>
-          <%= cl_image_tag a.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-        <p><%= link_to a.name, activity_path(a) %></p>
-        <p><%= a.venue.name %> <br><%= a.venue.address %></p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class="card activities_card mb-3">
+        <div class="acti_photo">
+          <% if a.photo.attached? %>
+            <%= cl_image_tag a.photo.key, height: 150, width: 150, crop: :cover %>
+          <% end %>
+        </div>
+        <div class="acti_photo">
+          <p><%= link_to a.name, activity_path(a) %></p>
+          <p><%= a.venue.name %> <br><%= a.venue.address %></p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
       </div>
   <% end %>
 </div>

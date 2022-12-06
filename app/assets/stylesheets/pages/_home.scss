@@ -91,6 +91,8 @@ body{
   flex-direction: column;
   padding: 1.5em 0.5em 1.5em 0.5em;
   background-color: rgb(235,235,242);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 path {
@@ -120,7 +122,7 @@ button {
   margin: 0px 0px 70px 0.5px;
   display: flex;
   width: 100vw;
-  background-color: #333;
+  background-color: rgb(247,246,250);
   overflow-x: auto;
   overflow-y: hidden;
   color: white;
@@ -137,4 +139,54 @@ body, html {
   width: 100%;
   scroll-behavior: smooth;
 
+}
+
+
+.home-card-container{
+margin-bottom: 30px;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  min-width: 390px;
+  margin-right: 25px;
+  justify-content: center;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  color: black;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }
