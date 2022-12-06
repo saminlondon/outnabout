@@ -1,7 +1,6 @@
 <%= render "shared/search" %>
 
 <div class="hero">
-  <h1 id="logo">O&A</h1>
   <div class="hero-text">
     <h1 class="banner-slogan">Hello <%= current_user.first_name %>!</h1>
     <p>London has a lot to offer</p>
@@ -16,7 +15,7 @@
     <p class="box-text">Activities</p>
   </div>
   <div class="venue-box">
-    <%= link_to all_activities_path do %>
+    <%= link_to venues_path do %>
       <i class="bi bi-pin-map"></i>
     <% end %>
     <p class="box-text">Venues</p>

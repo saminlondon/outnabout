@@ -1,4 +1,5 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700&display=swap');
 
 .side-scroll{
   overflow-x: scroll;
@@ -30,6 +31,12 @@
 
 body{
   background-color:#f7f6fa;
+  font-family: 'Alexandria', sans-serif;
+}
+
+p{
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 300;
 }
 
 
@@ -135,5 +142,4 @@ body, html {
   padding: 0px;
   width: 100%;
   scroll-behavior: smooth;
-
 }

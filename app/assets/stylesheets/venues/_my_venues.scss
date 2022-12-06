@@ -4,6 +4,13 @@
   align-items: center;
 }
 
+.index-head{
+  position: sticky;
+  top: 61px;
+  background-color: #f7f6fa;
+  z-index: 1;
+}
+
 .my-v-cards {
   background: #e6eaf8;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
