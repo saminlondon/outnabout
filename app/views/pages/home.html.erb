@@ -14,7 +14,7 @@
 <div class="home-boxes">
   <div class="venue-box">
     <%= link_to all_activities_path do %>
-      <i class="bi bi-pin-map"></i>
+      <i class="bi bi-people"></i>
     <% end %>
     <p class="box-text">Activities</p>
   </div>
@@ -28,7 +28,7 @@
 <div class="container home-cards-container">
   <div class="scrollmenu">
     <% @venues.each do |venue| %>
-      <div class="card-trip">
+      <div class="card-trip-home">
         <% if venue.activities.first.photo.attached? %>
         <%= cl_image_tag venue.activities.first.photo.key %>
         <% else %>
@@ -40,7 +40,6 @@
             <p><%= venue.activities.first.description %></p>
           </div>
           <h2 class="card-trip-pricing">£99.99</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
     <% end %>

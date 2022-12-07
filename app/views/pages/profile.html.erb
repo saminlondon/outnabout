@@ -17,12 +17,22 @@
         <% end %>
       </div>
       <% @venues.each do |v| %>
-      <h5><%= link_to v.name, venue_path(v.id) %></h5>
-      <h6><%= v.address %></h6>
+        <div class="card-trip" onclick="this.querySelector('a').click(); return true;">
+          <img src="<%= v.activities.first.photo.attached? ? (cl_image_path v.activities.first.photo.key) : 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to v.name, venue_path(v.id) %></h2>
+              <p><%= v.address %></p>
+            </div>
+          </div>
+        </div>
       <% end %>
     </div>
   <% else %>
-    <%= link_to "Login", new_user_session_path  %>
-    <%= link_to "Sign Up", new_user_registration_path  %>
+    <div class="register-buttons">
+      <%= link_to "Login", new_user_session_path, class:"btn btn-primary"  %>
+      <br>
+      <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-secondary" %>
+    </div>
   <% end %>
 </div>
