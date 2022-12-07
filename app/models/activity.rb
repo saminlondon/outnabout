@@ -3,9 +3,7 @@ class Activity < ApplicationRecord
   multisearchable against: [:name, :category]
   # CATEGORY = %w(bowling ping-pong darts go-karting rock-climbing trampolining mini-golf vr-gaming ice-skating escape-room)
 
-  has_many :slots
-
-
+  has_many :slots, dependent: :destroy
 
   belongs_to :venue
 

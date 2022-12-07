@@ -1,9 +1,12 @@
-<div class="container">
-  <div class="row py-4">
+<div class="checkout-container">
+  <div class="row">
     <%# <div class="col-md-3"><%= image_tag , width: '100%' %>
     <div class="col">
       <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @activity.name %></strong> for <%= @booking.user_party_size %> for <strong><%= humanized_money_with_symbol @activity.price %></strong></p>
+      <div class="checkout-content">
+        <h5>Purchase of <strong><%= @activity.name %></strong> on <strong><%= @booking.activity_date.strftime("%e %B") %></strong> for <%= @booking.user_party_size %> people for <%= humanized_money_with_symbol @activity.price %> each </h5>
+        <h4>total price is £<strong><%= @booking.user_party_size * @activity.price %></strong> </h4>
+      </div>
       <button id="pay" class="btn btn-primary">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>

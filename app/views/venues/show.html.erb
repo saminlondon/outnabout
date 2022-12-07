@@ -1,8 +1,8 @@
-<div class="container">
+<div class="venue-show-container">
   <div class="show-page-headers">
     <div class="venue-show-cards">
       <h1><%= @venue.name %></h1>
-      <h4><%= @venue.description %></h4>
+      <p><%= @venue.description %></p>
       <h5><%= @venue.address %></h5>
     </div>
     <div class="venue-show-button">
@@ -14,11 +14,12 @@
     </div>
   </div>
   <hr>
+  <h1>Activities at <%= @venue.name %></h1>
   <% @activity = Activity.where(venue: @venue.id) %>
-  <ul>
+  <div class="activity-indside-venue-show", onclick="this.querySelector('a').click(); return true;">
     <% @activity.each do |a| %>
       <h5><%= link_to a.name, activity_path(a.id)%></h5>
       <p>- <%= a.description %></p>
     <% end %>
-  </ul>
+  </div>
 </div>
