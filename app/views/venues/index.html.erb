@@ -1,13 +1,13 @@
 <div class="venues-activities-index">
-  <div class="index-head">
-    <div class="my-venues-activities-headers">
-      <h1 class="mt-4">Venues</h1>
-      <div>
-        <%= link_to "Add Venue", new_venue_path, class:"btn btn-primary mt-3", style:"border-radius:5px;"%>
+    <div class="index-head">
+      <div class="my-venues-activities-headers">
+        <h1 class="mt-4">Venues</h1>
+        <div>
+          <%= link_to "Add Venue", new_venue_path, class:"btn btn-primary mt-3", style:"border-radius:5px;"%>
+        </div>
       </div>
+      <hr>
     </div>
-    <hr>
-  </div>
   <% @venues.each do |v| %>
     <div class="card-trip" onclick="this.querySelector('a').click(); return true;">
       <img src="<%= v.activities.first.photo.attached? ? (cl_image_path v.activities.first.photo.key) : 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>" />
