@@ -201,3 +201,101 @@ margin-bottom: 30px;
   top: -20px;
   width: 40px;
 }
+
+
+.card-new{
+  background: linear-gradient(90deg, rgba(54,46,119,1) 0%, rgba(57,49,125,1) 35%, rgba(64,55,136,1) 100%);
+  border-radius: 20px;
+  width: 90vw;
+  height: 240px;
+  margin: 0 auto;
+  padding: 15px;
+  margin-right: 10px;
+}
+
+.before-line{
+  hr{
+    color: rgb(109, 109, 109);
+    margin: 12px 0;
+  }
+}
+
+.name-image{
+  display: flex;
+  justify-content:left;
+  h2{
+    font-size: 22px;
+    color: white;
+    text-align: left;
+    width: 173px;
+    margin-left: 15px;
+    font-weight: 300;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.name-image img{
+  height:100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.card-deets{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.deet{
+  text-align: center;
+  font-size: 13px;
+  color: #d9d9d9;
+  width: 140px;
+  h5{
+    font-size: 16px;
+    color: #8784af;
+  }
+  p{
+    font-size: 13px;
+    color: #f3f3f7;
+  }
+  // p{
+  //   width: 120px;
+  // }
+}
+
+.deet .card-new-price{
+  color: #fe8701;
+  font-weight: 400;
+  font-size: 20px;
+}
+// <div class="container home-cards-container">
+//   <div class="scrollmenu">
+//     <% @venues.each do |venue| %>
+//       <div class="card-trip-home">
+//         <% if venue.activities.first.photo.attached? %>
+//         <%= cl_image_tag venue.activities.first.photo.key %>
+//         <% else %>
+//         <%= 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>
+//         <% end %>
+//         <div class="card-trip-infos">
+//           <div>
+//             <h2><%= venue.activities.first.name %></h2>
+//             <p><%= venue.activities.first.description %></p>
+//           </div>
+//           <h2 class="card-trip-pricing">£99.99</h2>
+//         </div>
+//       </div>
+//     <% end %>
+//   </div>
+// </div>
+
+.activities-scroll{
+  position: relative;
+  top: 140px;
+}
