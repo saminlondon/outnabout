@@ -10,9 +10,14 @@
   background-color: #362e77;
 }
 
-#logo{
+.logo{
   color: orange;
   font-family: 'Alexandria', sans-serif;
+  text-decoration: none;
+  a{
+    text-decoration: none;
+    color: #f1952f;
+  }
  }
 
 .nav-form-control{
