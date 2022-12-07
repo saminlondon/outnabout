@@ -133,11 +133,11 @@ button {
   overflow-x: auto;
   overflow-y: hidden;
   color: white;
-  text-align: center;
   padding: 5px;
   text-decoration: none;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  margin-top: -171px;
 }
 
 body, html {
@@ -152,34 +152,39 @@ body, html {
 margin-bottom: 30px;
 }
 
-.card-trip {
+.card-trip-home {
   overflow: hidden;
-  background: white;
+  background:#e6e7e8;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   min-width: 390px;
-  margin-right: 25px;
-  justify-content: center;
+  margin-right: 5px;
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+  }
+
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+    color: black;
+  }
+
 }
 
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  color: black;
-}
 
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-  color: black;
-}
+
+
 
 
 .card-trip .card-trip-infos {
