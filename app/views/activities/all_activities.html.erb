@@ -1,45 +1,47 @@
-<div class="container">
-  <h1>Activities Near You</h1>
-  <p>Filters:</p>
-    <div class="filters">
-      <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Category
-      </button>
-      <ul class="dropdown-menu">
-        <li><%= link_to all_activities_path(category: "bowling") do %>
-            <p class= "filter <%= "selected" if params[:category]%>">Bowling</p>
-          <% end %>
-        </li>
-         <li><%= link_to all_activities_path(category: "skating") do %>
-            <p class= "filter <%= "selected" if params[:category]%>">Skating</p>
-          <% end %>
-        </li>
-        <li><%= link_to all_activities_path(category: "darts") do %>
-            <p class= "filter <%= "selected" if params[:category]%>">Darts</p>
-          <% end %>
-        </li>
-        <li><%= link_to all_activities_path(category: "escape room") do %>
-            <p class= "filter <%= "selected" if params[:category]%>">Escape Rooms</p>
-          <% end %>
-        </li>
-      </ul>
-      </div>
+<div class="venues-activities-index">
+  <div class="index-head">
+    <div class="my-venues-activities-headers">
+      <h1 class="mt-4">Activities</h1>
+        <div class="filters">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Category
+            </button>
+            <ul class="dropdown-menu">
+              <li><%= link_to all_activities_path(category: "bowling") do %>
+                  <p class= "filter <%= "selected" if params[:category]%>">Bowling</p>
+                <% end %>
+              </li>
+              <li><%= link_to all_activities_path(category: "skating") do %>
+                  <p class= "filter <%= "selected" if params[:category]%>">Skating</p>
+                <% end %>
+              </li>
+              <li><%= link_to all_activities_path(category: "darts") do %>
+                  <p class= "filter <%= "selected" if params[:category]%>">Darts</p>
+                <% end %>
+              </li>
+              <li><%= link_to all_activities_path(category: "escape room") do %>
+                  <p class= "filter <%= "selected" if params[:category]%>">Escape Rooms</p>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
     </div>
-  <hr>
-  <ul>
-  <% @activities.each do |a| %>
-    <div class="card activities_card mb-3">
-        <div class="acti_photo">
-          <% if a.photo.attached? %>
-            <%= cl_image_tag a.photo.key, height: 150, width: 150, crop: :cover %>
-          <% end %>
-        </div>
-        <div class="acti_photo">
-          <p><%= link_to a.name, activity_path(a) %></p>
-          <p><%= a.venue.name %> <br><%= a.venue.address %></p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <hr>
+  </div>
+    <ul>
+    <% @activities.each do |a| %>
+      <div class="card-trip" onclick="this.querySelector('a').click(); return true;">
+        <img src="<%= a.photo.attached? ? (cl_image_path a.photo.key) : 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= link_to a.name, activity_path(a.id) %></h2>
+            <p><%= a.venue.name %></p>
+          </div>
         </div>
       </div>
-  <% end %>
-</div>
+
+    <% end %>
+    </div>
+  </div>
