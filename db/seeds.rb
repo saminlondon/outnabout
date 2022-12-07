@@ -382,7 +382,7 @@ file = URI.open("https://www.team-sport.co.uk/media/3031/teamsport_gallery_go_ka
 venue14.photo.attach(io: file, filename: "venue14.jpg", content_type: "image/jpg")
 
 
-activity29 = Activity.create(name: "Karting", description: "Whether you're looking to improve your racing on your own or nail your personal best with your mates, our adult races will see you get on the podium in record breaking time - whilst getting that adrenaline kick!", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 25, category: "karting", venue_id: venue14.id)
+activity29 = Activity.create(name: "Karting", description: "Whether you're looking to improve your racing on your own or nail your personal best with your mates, our adult races will see you get on the podium in record breaking time - whilst getting that adrenaline kick!", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 25, category: "karting", venue_id: venue13.id)
 file = URI.open("https://www.team-sport.co.uk/media/3177/teamsport_adult_groups_of_8plus_events_thumbnail_1920x1090-min.jpg?anchor=center&mode=crop&width=872&height=458&rnd=131503928520000000")
 activity29.photo.attach(io: file, filename: "activity29.jpg", content_type: "image/jpg")
 i = 9
