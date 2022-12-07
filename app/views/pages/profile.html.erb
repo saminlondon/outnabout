@@ -19,7 +19,6 @@
       <% @venues.each do |v| %>
       <h5><%= link_to v.name, venue_path(v.id) %></h5>
       <h6><%= v.address %></h6>
-      <p><%= v.description %></p>
       <% end %>
     </div>
   <% else %>

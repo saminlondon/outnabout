@@ -5,7 +5,7 @@
       <h4><%= @venue.description %></h4>
       <h5><%= @venue.address %></h5>
     </div>
-    <div>
+    <div class="venue-show-button">
       <% if @venue.user.id == current_user.id %>
         <%= link_to "Delete", @venue, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
         <%= link_to "Edit", edit_venue_path(@venue.id), class:"btn btn-warning" %>

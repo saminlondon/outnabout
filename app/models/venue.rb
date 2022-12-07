@@ -4,8 +4,8 @@ class Venue < ApplicationRecord
 
   include PgSearch::Model
   multisearchable against: [:name]
-  has_many :activities
-
+  has_many :activities, dependent: :destroy
+  has_many :slots, through: :activities, dependent: :destroy
   belongs_to :user
 
   validates :name, presence: true
@@ -13,5 +13,6 @@ class Venue < ApplicationRecord
   validates :description, presence: true
 
   has_one_attached :photo
+
 
 end
