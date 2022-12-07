@@ -7,10 +7,23 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
-  background-color: #f7f6fa;
+  background-color: #362e77;
 }
 
 #logo{
   color: orange;
   font-family: 'Alexandria', sans-serif;
  }
+
+.nav-form-control{
+  border-radius: 5px;
+  border: 1px solid #464087;
+  width: 40vw;
+  height: 27px;
+  margin: 0 auto;
+  text-align: left;
+  color: white;
+  font-size: 13px;
+  background-color: #4b4586;
+  padding: 6px;
+}
