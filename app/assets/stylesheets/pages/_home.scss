@@ -33,18 +33,20 @@ body{
   background-color:#f7f6fa;
   font-family: 'Alexandria', sans-serif;
 }
+.dropdown-menu{
 
-p{
-  font-family: 'Alexandria', sans-serif;
-  text-decoration: none;
-  color: black;
-  font-weight: 400;
+  p{
+    font-family: 'Alexandria', sans-serif;
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+  }
+  a{
+    text-decoration: none;
+    color: #f1952f;
+  }
 }
 
-a{
-  text-decoration: none;
-  color: #f1952f;
-}
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 
