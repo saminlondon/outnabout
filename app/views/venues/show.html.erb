@@ -2,7 +2,9 @@
   <div class="show-page-headers">
     <div class="venue-show-cards">
       <h1><%= @venue.name %></h1>
+      <hr>
       <p><%= @venue.description %></p>
+      <hr>
       <h5><%= @venue.address %></h5>
     </div>
     <div class="venue-show-button">
@@ -16,10 +18,18 @@
   <hr>
   <h1>Activities at <%= @venue.name %></h1>
   <% @activity = Activity.where(venue: @venue.id) %>
-  <div class="activity-indside-venue-show", onclick="this.querySelector('a').click(); return true;">
     <% @activity.each do |a| %>
-      <h5><%= link_to a.name, activity_path(a.id)%></h5>
-      <p>- <%= a.description %></p>
+      <div class="card-trip" onclick="this.querySelector('a').click(); return true;">
+        <img src="<%= a.photo.attached? ? (cl_image_path a.photo.key) : 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>" />
+        <div class="card-trip-infos" >
+          <div style="width:100%;">
+            <div class="d-flex" style="justify-content:space-between;">
+              <h2><%= link_to a.name, activity_path(a.id), style:"text-decoration:none; color:black;" %></h2>
+              <h2>£<%= a.price %></h2>
+            </div>
+            <p><%= a.venue.name %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </div>
 </div>
