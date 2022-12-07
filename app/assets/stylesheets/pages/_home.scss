@@ -233,7 +233,7 @@ margin-bottom: 30px;
 .name-image{
   display: flex;
   justify-content:left;
-  h2{
+  h2, h5{
     font-size: 22px;
     color: white;
     text-align: left;
@@ -245,6 +245,13 @@ margin-bottom: 30px;
     justify-content: center;
     flex-direction: column;
   }
+  h5{
+    font-size: 18px;
+    color: #a9a7c3;
+  }
+  .home-card-top{
+    height: 50px;
+  }
 }
 
 .name-image img{
@@ -254,35 +261,35 @@ margin-bottom: 30px;
   border-radius: 20px;
 }
 
-.card-deets{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0 auto;
-}
+// .card-deets{
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+//   margin: 0 auto;
+// }
 
 .deet{
-  text-align: center;
+  text-align: left;
   font-size: 13px;
   color: #d9d9d9;
-  width: 140px;
-  h5{
+  width: 100%;
+  .card-new-address{
     font-size: 16px;
-    color: #8784af;
+    color: #c2c2c2;
+    height: 45px;
   }
-  p{
-    font-size: 13px;
-    color: #f3f3f7;
-  }
-  // p{
-  //   width: 120px;
-  // }
+
 }
 
-.deet .card-new-price{
+.card-new-price{
   color: #fe8701;
   font-weight: 400;
   font-size: 20px;
+  text-align: right;
+  margin-bottom: 0px;
+  // display: flex;
+  // align-items: flex-end;
+  // justify-content: flex-end;
 }
 // <div class="container home-cards-container">
 //   <div class="scrollmenu">
