@@ -1,13 +1,17 @@
 .booking-show-container {
-  margin: 20px;
-  color: white;
+  margin: 30px;
+  color: #231F51;
+}
+
+.booking-show-container h4 {
+  color: #231F51;
 }
 
 .booking-card-show {
 
 
-  background: #e6eaf8;
-  color: black;
+  background: #231F51;
+  color: #EBECF4;
 
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 20px;
@@ -27,4 +31,9 @@
 
 .bookingconfirm h2 {
   margin: 15px;
+}
+
+.btn-dark {
+  background-color: #231F51;
+  margin-top: 10px;
 }

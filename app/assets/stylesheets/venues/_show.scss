@@ -1,18 +1,54 @@
 .venue-show-cards {
-  background: #e6eaf8;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  margin: 30px;
+  background: #231F51;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  // margin: 30px;
   padding: 20px;
   display: grid;
   border-radius: 10px;
   width: fit-content;
-  color: black;
+  color: #EBECF4;;
+  margin-bottom: 20px;
 }
 
 .venue-show-cards h1 {
-  color: black;
+  color: #EBECF4;
 }
 
 .venue-show-button {
-  margin-left: 30px;
+  // margin-left: 30px;
+}
+
+
+.btn-danger {
+  margin-top: 10px;
+  background-color: #231F51 !important;
+  border-color: #231f51 !important;
+  color: #EBECF4;
+}
+
+
+.btn-warning {
+  margin-top: 10px;
+  background-color: #231F51 !important;
+  border-color: #231f51 !important;
+  color: #EBECF4;
+}
+
+
+.activity-indside-venue-show {
+  background: #231F51;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  // margin: 30px;
+  padding: 20px;
+  display: grid;
+  border-radius: 10px;
+  width: fit-content;
+  color: #EBECF4;
+  margin-top: 20px;
+}
+
+
+.venue-show-container {
+  margin: 20px;
+  color: #231F51;
 }

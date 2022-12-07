@@ -5,22 +5,26 @@
 .bookings-container h1 {
   margin-top: 20px !important;
   // margin-bottom: 2.5rem !important;
+  color: #231f51;
 }
 
 
 .booking-card {
-  background: #e6eaf8;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background: #ebecf4;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
   margin: 30px;
   padding: 20px;
   display: grid;
   border-radius: 10px;
   width: fit-content;
-  color: black !important;
+  color: #231f51 !important;
 }
 
+
 .cancel-button {
+  border-color: #231f51 !important;
 }
+
 
 .booking-cards {
   display: grid;
@@ -30,3 +34,11 @@
   margin-left: 30px;
   font-weight: bolder;
 }
+
+
+.btn-outline-dark{
+  color: #231f51 !important;
+
+}
+
+
