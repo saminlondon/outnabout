@@ -12,17 +12,12 @@
 .booking-card {
   background: #ebecf4;
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
-  margin: 30px;
+  margin: 15px;
   padding: 20px;
   display: grid;
   border-radius: 10px;
   width: fit-content;
   color: #3e3685 !important;
-}
-
-
-.cancel-button {
-  border-color: #3e3685 !important;
 }
 
 
@@ -36,7 +31,16 @@
 }
 
 
-.btn-outline-dark{
-  color: #3e3685 !important;
+.btn-link{
+  color: #968ed4 !important;
+  display: contents;
+  text-decoration: none;
 
+}
+
+
+.cancel-button {
+  border-color: #776fb8 !important;
+  display: flex;
+  justify-content: right;
 }
