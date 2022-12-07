@@ -25,23 +25,58 @@
     <p class="box-text">Venues</p>
   </div>
 </div>
+
 <div class="container home-cards-container">
+  <h2 style="position: absolute;top: -30px;font-size: 22px;color: #383838;">Recently Added Venues</h2>
   <div class="scrollmenu">
-    <% @venues.each do |venue| %>
-      <div class="card-trip-home">
-        <% if venue.activities.first.photo.attached? %>
-        <%= cl_image_tag venue.activities.first.photo.key %>
-        <% else %>
-        <%= 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>
-        <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= venue.activities.first.name %></h2>
-            <p><%= venue.activities.first.description %></p>
+    <% @venues.each do |v| %>
+      <div class="card-new">
+        <div class="before-line">
+          <div class="name-image">
+            <img src="<%= v.activities.first.photo.attached? ? (cl_image_path v.activities.first.photo.key) : 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>">
+            <h2><%= v.name %></h2>
           </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
+          <hr>
+        </div>
+        <div class="card-deets">
+          <div class="deet">
+            <h5>Address</h5>
+            <p><%= v.address %></p>
+          </div>
+          <div class="deet">
+            <h5>Price</h5>
+            <p class="card-new-price">£<%= v.activities.first.price %></p>
+          </div>
         </div>
       </div>
     <% end %>
+  </div>
+
+
+  <div class="activities-scroll">
+    <h2 style="position: absolute;top: -30px;font-size: 22px;color: #383838;">Popular Activities</h2>
+    <div class="scrollmenu">
+      <% @activities.shuffle.each do |a| %>
+        <div class="card-new">
+          <div class="before-line">
+            <div class="name-image">
+              <img src="<%= a.photo.attached? ? (cl_image_path a.photo.key) : 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>">
+              <h2><%= a.name %></h2>
+            </div>
+            <hr>
+          </div>
+          <div class="card-deets">
+            <div class="deet">
+              <h5>Venue</h5>
+              <p><%= a.venue.name %></p>
+            </div>
+            <div class="deet">
+              <h5>Price</h5>
+              <p class="card-new-price">£<%= a.price %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
