@@ -1,5 +1,5 @@
 <div class="top-navbar">
-  <h1 id="logo">O&A</h1>
+   <h1 class="logo " class><%= link_to "O&A", root_path %></h1>
   <div class="search-top-bar">
     <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
