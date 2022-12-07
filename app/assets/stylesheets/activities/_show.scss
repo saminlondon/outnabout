@@ -64,3 +64,21 @@
 .form-control{
 
 }
+
+.book-button{
+  width: 100%;
+  background-color: #362e77;
+  color: white;
+}
+
+.back-button{
+  display: flex !important;
+  justify-content: right;
+
+}
+
+.actual-button{
+  background-color: white !important;
+  color: grey !important;
+  text-decoration: none;
+}
