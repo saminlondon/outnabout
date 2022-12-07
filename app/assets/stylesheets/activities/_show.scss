@@ -29,3 +29,34 @@
 
   }
 }
+
+.show-activities{
+  background-color: rgb(255,255,255);
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  width: 95vw;
+  h1{
+   color: #262053;
+   text-align: center;
+  }
+  h4{
+    color: #ffa340;
+    text-align: center;
+    padding-top: 8px;
+  }
+  h5{
+    color: #8680b9;
+    margin-left: 7px;
+  }
+
+  p{
+    color:#b3b2c2;
+    margin-left: 5px;
+  }
+}
+.container-form-booking{
+  background-color: rgb(255,255,255) ;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  width: 95vw;
+}
