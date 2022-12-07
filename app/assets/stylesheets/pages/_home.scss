@@ -33,10 +33,18 @@ body{
   background-color:#f7f6fa;
   font-family: 'Alexandria', sans-serif;
 }
+.dropdown-menu{
 
-p{
-  font-family: 'Alexandria', sans-serif;
-  font-weight: 300;
+  p{
+    font-family: 'Alexandria', sans-serif;
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+  }
+  a{
+    text-decoration: none;
+    color: #f1952f;
+  }
 }
 
 
