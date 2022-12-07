@@ -36,9 +36,15 @@ body{
 
 p{
   font-family: 'Alexandria', sans-serif;
-  font-weight: 300;
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
 }
 
+a{
+  text-decoration: none;
+  color: #f1952f;
+}
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 
