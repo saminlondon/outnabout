@@ -327,14 +327,14 @@ end
 
 venue13 = Venue.create(name: "Strike", address: "74 Wandsworth High Street, London SW18 4LB", description: "Strike is South West London’s first bowling alley. The distinctly boutique venue is made up of bowling lanes, duckpin bowling lanes, smart darts boards, shuffleboards, a contemporary restaurant, and a bar specialising in cocktails and local craft beer. Open seven days a week, throughout the day and evening, Strike is a warm, relaxed, yet vibrant space that will welcome groups of all sizes and people of all ages.", user_id: maaz.id)
 file = URI.open("http://strike-bowling.com/images/home-events.png")
-venue13.photo.attach(io: file, filename: "venue13.jpg", content_type: "image/jpg")
+venue13.photo.attach(io: file, filename: "venue13.png", content_type: "image/png")
 
 
 
 
 activity25 = Activity.create(name: "Tenpin", description: "Nothing really needs to be said about this one. You know the deal. Ten pins. One ball. One hell of a good time.", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 10, category: "bowling", venue_id: venue13.id)
 file = URI.open("http://strike-bowling.com/images/games-tenpin-pic.png")
-activity25.photo.attach(io: file, filename: "activity25.jpg", content_type: "image/jpg")
+activity25.photo.attach(io: file, filename: "activity25.png", content_type: "image/png")
 i = 10
 until i == 23
   Slot.create!(activity: activity25, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
@@ -346,7 +346,7 @@ end
 
 activity26 = Activity.create(name: "Duck Pin", description: "The best game you’ve never heard of. Shorter, fatter pins, and smaller, lighter balls with no finger holes. And you get three chances to knock the pins down. Come and try it. It’s excellent.", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 10, category: "bowling", venue_id: venue13.id)
 file = URI.open("http://strike-bowling.com/images/games-duckpin-pic.png")
-activity26.photo.attach(io: file, filename: "activity26.jpg", content_type: "image/jpg")
+activity26.photo.attach(io: file, filename: "activity26.png", content_type: "image/png")
 i = 10
 until i == 23
   Slot.create!(activity: activity26, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
@@ -357,7 +357,7 @@ end
 
 activity27 = Activity.create(name: "Darts", description: "It’s darts, but different. Infused with state-of-the-art tech, our boards do the scoring for you; long gone are the days of being too drunk to work the maths out. The scoring monitor will guide you, arrow by arrow, through a variety of unique games, leaving you more time to fulfil your lifelong dream of drinking as many beers as you can in 60 minutes.", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 10, category: "darts", venue_id: venue13.id)
 file = URI.open("http://strike-bowling.com/images/games-darts-pic.png")
-activity27.photo.attach(io: file, filename: "activity27.jpg", content_type: "image/jpg")
+activity27.photo.attach(io: file, filename: "activity27.png", content_type: "image/png")
 i = 10
 until i == 23
 Slot.create!(activity: activity27, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
@@ -368,7 +368,7 @@ end
 
 activity28 = Activity.create(name: "Shuffleboard", description: "Choose from four different games and glide your pucks to victory on one of our world class maple wood shuffleboards. If you’ve never played it before, there’s a good chance that shuffleboard’s going to become your new favourite game. It’s addictive as puck.", operational_start_time: "2022-11-29 10:00:00", operational_end_time: "2022-11-29 22:00:00", activity_party_size: 6, price: 10, category: "shuffleboard", venue_id: venue13.id)
 file = URI.open("http://strike-bowling.com/images/games-shuffle-pic.png")
-activity28.photo.attach(io: file, filename: "activity28.jpg", content_type: "image/jpg")
+activity28.photo.attach(io: file, filename: "activity28.png", content_type: "image/png")
 i = 10
 until i == 23
   Slot.create!(activity: activity28, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
