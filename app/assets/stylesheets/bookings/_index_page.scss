@@ -16,7 +16,7 @@
   padding: 20px;
   display: grid;
   border-radius: 10px;
-  width: fit-content;
+  width: 360px;
   color: #3e3685 !important;
 }
 
@@ -35,7 +35,6 @@
   color: #968ed4 !important;
   display: contents;
   text-decoration: none;
-
 }
 
 
@@ -43,4 +42,9 @@
   border-color: #776fb8 !important;
   display: flex;
   justify-content: right;
+}
+
+
+.booking-card h2 {
+  color: #231f51;
 }
