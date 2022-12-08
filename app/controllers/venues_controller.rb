@@ -49,7 +49,7 @@ class VenuesController < ApplicationController
     @activity = Activity.where(venue: @venue)
     @activity.each { |a| a.destroy }
     @venue.destroy!
-    redirect_to my_venues_path
+    redirect_to profile_path
   end
 
   private
