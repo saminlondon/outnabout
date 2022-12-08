@@ -1,11 +1,13 @@
-<%= render "shared/search" %>
 
+<%= render "shared/search" %>
 <div class="hero">
+  <h1 class="logo-home"><%= link_to "O&A", root_path %></h1>
   <div class="hero-text">
     <% if user_signed_in? %>
       <h1 class="banner-slogan">Hello <%= current_user.first_name %>!</h1>
     <% else %>
       <h1 class="banner-slogan">Out N' About</h1>
+      <h1 class="logo"><%= link_to "O&A", root_path %></h1>
     <% end %>
     <p>Discover what the world has to offer</p>
       <%# <%= link_to "Explore", all_activities_path, class: "btn btn-light"%>
