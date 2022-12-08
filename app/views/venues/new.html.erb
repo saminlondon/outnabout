@@ -1,11 +1,11 @@
-<div class="container mt-4">
+<div class="container mt-4" style="width:90vw">
   <h1><strong>New Venue</strong></h1>
   <div class="new-venue-form">
     <%= simple_form_for @venue do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :description %>
-    <%= f.button :submit, 'Create Venue', class:"btn btn-light" %>
+    <%= f.button :submit, 'Create Venue', class:"btn btn-primary" %>
     <% end %>
   </div>
 </div>

@@ -1,7 +1,7 @@
-<div class="form">
+<div class="form mt-4" style="width:90vw;margin:0 auto;">
     <h1><strong>New Activity</strong></h1>
   <div class="container">
-    <div>
+    <div style="color:#362d77">
       <%= simple_form_for (@activity), html: { class: "form-new-activity" } do |f| %>
         <%= f.input :venue, :as => :hidden, :input_html => { :value => @venue.id } %>
         <%= f.input :name %>
