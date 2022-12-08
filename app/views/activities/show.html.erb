@@ -16,14 +16,23 @@
         <h5>About <%= @activity.venue.name %></h5>
         <p><%= @activity.venue.description %></p>
       </div>
-      <div class="back-button">
-        <%= link_to "Back", root_path, class: "btn btn-link actual-button" %>
-      </div>
+      <div>
 
-    <% if current_user && current_user == @activity.venue.user %>
-      <%= link_to "Delete", @activity, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <%= link_to "Edit", edit_activity_path, class: "btn btn-warning" %>
-    <% end %>
+
+        <% if current_user && current_user == @activity.venue.user %>
+          <div class= "flex-container">
+            <div>
+              <%= link_to "Edit", edit_activity_path, class: "btn btn-warning" %>
+              <%= link_to "Delete", @activity, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              <%= link_to "Back", root_path, class: "btn btn-link" %>
+            </div>
+          </div>
+          <% else %>
+            <div class="back-button">
+          <%= link_to "Back", root_path, class: "btn btn-link actual-button" %>
+        </div>
+        <% end %>
+    </div>
   </div>
 
   <div class="container-form-booking">
@@ -37,5 +46,4 @@
     <% end %>
     <% end %>
   </div>
-
 </div>

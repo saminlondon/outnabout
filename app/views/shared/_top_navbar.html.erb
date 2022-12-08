@@ -1,5 +1,6 @@
 <div class="top-navbar">
    <h1 class="logo " class><%= link_to "O&A", root_path %></h1>
+   <% unless params[:controller] == "pages" && params[:action] == "home" %>
   <div class="search-top-bar">
     <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
@@ -7,6 +8,7 @@
         class: "nav-form-control",
         placeholder: "Search for something"%>
         <%= submit_tag "Search", class: "btn btn-light", style:"display:none;" %>
+        <% end %>
       <% end %>
   </div>
 </div>
