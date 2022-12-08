@@ -21,10 +21,14 @@
 
         <% if current_user && current_user == @activity.venue.user %>
           <div class= "flex-container">
-            <div>
-              <%= link_to "Edit", edit_activity_path, class: "btn btn-warning" %>
-              <%= link_to "Delete", @activity, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-              <%= link_to "Back", root_path, class: "btn btn-link" %>
+            <%= link_to "Back", root_path, class: "btn btn-link" %>
+            <div class=activity-buttons>
+              <%= link_to edit_activity_path(@activity.id) do %>
+                <i class="bi bi-pencil-square"></i>
+              <% end %>
+              <%= link_to @activity, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="bi bi-trash"></i>
+              <% end %>
             </div>
           </div>
           <% else %>
@@ -35,15 +39,15 @@
     </div>
   </div>
 
-  <div class="container-form-booking">
-    <% if current_user != @activity.venue.user %>
-    <%= simple_form_for [@activity, @booking] do |f| %>
-    <%= f.input :activity_date, as: :string, input_html: {type: :date}%>
-    <%= f.association :slot, label: 'Please choose a time slot', label_method: :slot_time, value_method: :id, collection: @slots_available  %>
-    <%# <% f.input :activity, as => :hidden, :input_html => { :value => @activity.current_user.slots.pluck(:activity_id).uniq} %>
-    <%= f.input :user_party_size, label: 'Please choose a party size', as: :integer %>
-    <%= f.button :submit, 'Book', class:"btn btn-light book-button" %>
-    <% end %>
-    <% end %>
+  <% if current_user != @activity.venue.user %>
+    <div class="container-form-booking">
+      <%= simple_form_for [@activity, @booking] do |f| %>
+      <%= f.input :activity_date, as: :string, input_html: {type: :date}%>
+      <%= f.association :slot, label: 'Please choose a time slot', label_method: :slot_time, value_method: :id, collection: @slots_available  %>
+      <%# <% f.input :activity, as => :hidden, :input_html => { :value => @activity.current_user.slots.pluck(:activity_id).uniq} %>
+      <%= f.input :user_party_size, label: 'Please choose a party size', as: :integer %>
+      <%= f.button :submit, 'Book', class:"btn btn-light book-button" %>
+      <% end %>
+      <% end %>
   </div>
 </div>

@@ -91,3 +91,25 @@
   color: grey !important;
   text-decoration: none;
 }
+
+.activity-buttons{
+  i{
+    font-size: 20px;
+  }
+  .bi-pencil-square{
+    color: #686868;
+  }
+
+  .bi-trash{
+    color: rgb(144, 0, 0);
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+.flex-container{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5px;
+}
