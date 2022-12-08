@@ -27,9 +27,9 @@
 </div>
 
 <div class="container home-cards-container">
-  <h2 style="position: absolute;top: -30px;font-size: 22px;color: #383838;">Popular Activities</h2>
+  <h2 style="position: absolute;top: -30px;font-size: 22px;color: #383838;">Recently Added </h2>
   <div class="scrollmenu">
-    <% @activities.shuffle.each do |a| %>
+    <% @activities.order('created_at DESC').each do |a| %>
         <div class="card-new" onclick="this.querySelector('a').click(); return true;">
           <div class="before-line">
             <div class="name-image">
@@ -43,7 +43,7 @@
           </div>
           <div class="card-deets">
             <div class="deet">
-              <p class="card-new-address"><i class="bi bi-pin-map"></i> <%= a.venue.address %></p>
+              <p class="card-new-address">📍 <%= a.venue.address %></p>
             </div>
           </div>
           <div class="card-price">
@@ -54,10 +54,10 @@
   </div>
 
 
-  <div class="activities-scroll">
+  <div class="bowling-scroll">
     <h2 style="position: absolute;top: -30px;font-size: 22px;color: #383838;">Bowling</h2>
     <div class="scrollmenu">
-      <% @activities.shuffle.each do |a| %>
+      <% @bowling.shuffle.each do |a| %>
         <div class="card-new" onclick="this.querySelector('a').click(); return true;">
           <div class="before-line">
             <div class="name-image">
@@ -71,7 +71,35 @@
           </div>
           <div class="card-deets">
             <div class="deet">
-              <p class="card-new-address"><i class="bi bi-pin-map"></i> <%= a.venue.address %></p>
+              <p class="card-new-address">📍 <%= a.venue.address %></p>
+            </div>
+          </div>
+          <div class="card-price">
+            <p class="card-new-price">£<%= a.price %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+    <div class="escape-scroll">
+    <h2 style="position: absolute;top: -30px;font-size: 22px;color: #383838;">Escape Rooms</h2>
+    <div class="scrollmenu">
+      <% @escape.shuffle.each do |a| %>
+        <div class="card-new" onclick="this.querySelector('a').click(); return true;">
+          <div class="before-line">
+            <div class="name-image">
+              <img src="<%= a.photo.attached? ? (cl_image_path a.photo.key) : 'https://m.media-amazon.com/images/S/aplus-media/vc/cab6b08a-dd8f-4534-b845-e33489e91240._CR75,0,300,300_PT0_SX300__.jpg'%>">
+                <div class="home-card-top">
+                  <h2><%= link_to a.name, activity_path(a.id), style:"text-decoration:none; color:white;"%></h2>
+                  <h5><%= a.venue.name %></h5>
+                </div>
+            </div>
+            <hr>
+          </div>
+          <div class="card-deets">
+            <div class="deet">
+              <p class="card-new-address">📍 <%= a.venue.address %></p>
             </div>
           </div>
           <div class="card-price">
