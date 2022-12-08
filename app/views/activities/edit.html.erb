@@ -1,17 +1,20 @@
-<div class="container">
-  <div class="form">
-    <%= simple_form_for (@activity) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :operational_start_time %>
-      <%= f.input :operational_end_time %>
-      <%= f.input :activity_party_size %>
-      <%= f.input :price %>
-      <%= f.input :category %>
-      <%# <%= f.input :photo, as: :file %>
-      <%= f.submit class:"btn btn-primary"  %>
+<div class="form mt-4" style="width:90vw;margin:0 auto;">
+  <h3>Edit Activity</h3>
+  <div class="container">
+    <div style="color:#362d77">
+      <%= simple_form_for (@activity) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :operational_start_time %>
+        <%= f.input :operational_end_time %>
+        <%= f.input :activity_party_size %>
+        <%= f.input :price %>
+        <%= f.input :category %>
+        <%# <%= f.input :photo, as: :file %>
+        <%= f.submit class:"btn btn-primary"  %>
       <% end %>
-  <br>
+    <br>
+    </div>
     <%= link_to "Back", activity_path(@activity), class: "btn btn-secondary"   %>
   </div>
 </div>
