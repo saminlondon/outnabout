@@ -1,8 +1,11 @@
-<div class="container">
-  <%= simple_form_for @venue do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.button :submit, 'Edit Venue', class:"btn btn-primary" %>
-  <% end %>
+<div class="venue-new-container">
+  <h3>Edit <%= @venue.name %></h3>
+    <div class="new-venue-form">
+      <%= simple_form_for @venue do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.button :submit, 'Edit Venue', class:"btn btn-primary" %>
+      <% end %>
+    </div>
 </div>
