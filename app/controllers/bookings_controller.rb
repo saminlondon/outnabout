@@ -66,8 +66,8 @@ class BookingsController < ApplicationController
           }
         ],
         mode: "payment",
-        success_url: "http://localhost:3000/activities/#{@activity.id}/bookings/#{@booking.id}",
-        cancel_url: "http://localhost:3000/activities/#{@activity.id}/bookings/#{@booking.id}"
+        success_url: "https://outnnabout.herokuapp.com/activities/#{@activity.id}/bookings/#{@booking.id}",
+        cancel_url: "https://outnnabout.herokuapp.com/activities/#{@activity.id}/bookings/#{@booking.id}"
       )
 
         @booking.update(checkout_session_id: session.id)
