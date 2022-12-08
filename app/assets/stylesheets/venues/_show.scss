@@ -7,7 +7,7 @@
   border-radius: 10px;
   width: fit-content;
   color: #EBECF4;;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 
 .venue-show-cards h1 {
@@ -16,13 +16,29 @@
 
 .venue-show-button {
   // margin-left: 30px;
+  i{
+    position: relative;
+    font-size: 35px;
+    top: 10px;
+    left: 150px;
+  }
+  .bi-pencil-square{
+    color: #686868;
+  }
+
+  .bi-trash{
+    color: rgb(144, 0, 0);
+  }
+  a{
+    text-decoration: none;
+  }
 }
 
 
 .btn-danger {
   // margin-top: 10px;
-  background-color: #231F51 !important;
-  border-color: #231f51 !important;
+  // background-color: #512d1f !important;
+  // border-color: #231f51 !important;
   color: #EBECF4;
 }
 
