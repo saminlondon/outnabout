@@ -2,15 +2,17 @@
   <h1>My Bookings</h1>
 
   <div class="booking-cards">
+
     <% @bookings.each do |b| %>
-      <div class="booking-card" onclick="this.querySelector('a').click(); return true;">
-        <h2><strong><%= b.slot.activity.name %></strong></h2>
-        <p> 📍 <%= b.slot.activity.venue.address %></p>
-        <p> 👬 <%= b.user_party_size %> people </p>
-        <p> 🗓 <%= b.activity_date.strftime("%e %B") %> from <%= b.slot.start_time.strftime("%H:%M") %> to <%= b.slot.end_time.strftime("%H:%M") %></p>
-        <div class="cancel-button">
-          <%# <%= link_to "See Activity", activity_path(b.slot.activity_id), class: "btn btn-outline-dark p-1" %>
-          <%= link_to "Cancel", b, class: "btn btn-link justify-content-md-end p-1", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+      <div class="booking-card">
+          <h2><strong><%= b.slot.activity.name %></strong></h2>
+          <p> 📍 <%= b.slot.activity.venue.address %></p>
+          <p> 👬 <%= b.user_party_size %> people </p>
+          <p> 🗓 <%= b.activity_date.strftime("%e %B") %> from <%= b.slot.start_time.strftime("%H:%M") %> to <%= b.slot.end_time.strftime("%H:%M") %></p>
+          <div class="cancel-button">
+            <%# <%= link_to "See Activity", activity_path(b.slot.activity_id), class: "btn btn-outline-dark p-1" %>
+            <%= link_to "Cancel", b, class: "btn btn-link justify-content-md-end p-1", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+          </div>
         </div>
       </div>
     <% end %>
