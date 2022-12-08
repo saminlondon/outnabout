@@ -36,7 +36,7 @@
   width: 100%;
   display: flex;
   z-index: 999;
-
+  border-top: 2px solid #e8e7e7;
   justify-content: space-around;
 }
 
@@ -50,6 +50,18 @@
   width: 30px;
   font-size: 25px;
   color: #7a7878;
+  position: relative;
+  top: 3px;
+}
+
+.nav-labels {
+  text-align: center;
+
+  p{
+    color: grey;
+    font-size: 12px;
+    font-weight: 300;
+  }
 }
 
 @media screen and (min-width: 600px) {

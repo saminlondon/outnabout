@@ -1,14 +1,21 @@
 
 <nav class="mobile-nav">
+      <div class="nav-labels">
         <%= link_to root_path, class:"bloc-icon" do %>
           <i class="bi bi-house-door"></i>
         <% end %>
-
+        <p>Home</p>
+      </div>
+      <div class="nav-labels">
         <%= link_to bookings_path, class:"bloc-icon" do %>
           <i class="bi bi-book"></i>
         <% end %>
-
+        <p>Bookings</p>
+      </div>
+      <div class="nav-labels">
         <%= link_to profile_path, class:"bloc-icon" do %>
             <i class="bi bi-person-circle"></i>
         <% end %>
+        <p>Profile</p>
+      </div>
 </nav>
