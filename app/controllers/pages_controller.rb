@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   def home
     @activities = Activity.all
     @venues = Venue.all
+    @bowling = Activity.where(category: "bowling")
+    @escape = Activity.where(category: "escape room")
   end
 
   def profile
